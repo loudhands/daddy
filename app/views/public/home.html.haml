@@ -1,23 +1,25 @@
 .dads
-  %h2
-    The Dad's
+  .header-group
+    %h2
+      The Dad's
+    = link_to "+ Add my Dad", new_dad_path, :class=>"btn add"
   - if @dads.blank?
     %h2
       No Dads added yet : [
   - else
     - @dads.each do |dad|
-      %div
-        %p
+      .dad
+        .photo
           = link_to image_tag(dad.photo.url), dad_path(dad)
-        %p
-          = link_to dad.name, dad_path(dad)
-        %p
-          = dad.description
-        %p
-          = twitter_share(dad_url(dad))
-        %p
-          = facebook_share(dad_url(dad))
-
-= link_to "Add my Dad", new_dad_path
+        .info
+          %h1
+            = link_to dad.name, dad_path(dad)
+          %p
+            = dad.description
+          .share
+            %p
+              = twitter_share(dad_url(dad))
+              = facebook_share(dad_url(dad))
+        .clearfix
 
 = will_paginate @dads
