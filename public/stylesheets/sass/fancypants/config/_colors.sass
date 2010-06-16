@@ -1,0 +1,83 @@
+//
+  The easiest way to generate a new color scheme is to simply set a base color here.  
+  The color scheme is generated below based on relative values, and implemented 
+  throughout. You can obviously tweak that below, or go through and set your colors 
+  for each element by hand, but I've tried to set this up to give you a quick idea 
+  of how different colors might work for your content. Tends to work better when a 
+  rich color is used, as the scheme is created by adding and subtracting various 
+  amounts of gray to the base.
+
+  Some other fun base colors to try:
+  fancy blue - #034569
+  lime green - #4E9600
+  ruby red - #A60C00
+  bright pink - #CE0071
+  royal purple - #45036F
+  mustard plug - #A67000
+
+// Set a basic color scheme
+
+//Base color
+!base = #888
+
+//Color scheme
+!darkest = !base - #888
+!darker = !base - #555
+!dark = !base - #222
+!medium = #A6A7A9
+!light = #D2D3D6
+!lighter = !base + #666
+!lightest = !base + #888
+
+
+// Apply color scheme to elements
+
+//Body elements
+!body = #fff
+!topBar = #fff
+!logo = #4C4D56
+!tabs = !medium
+!tabLink = !lightest
+!wrapper = #fff
+!contentBox = #fff
+
+//Typography
+!h1 = !darkest
+!h2 = !darkest
+!h3 = !darker
+!h4 = !darkest
+!text = !darkest
+
+!link = #111
+
+//Border used on content box, pagination, etc.
+!border = #D2D3D6
+=borderThin
+  :border = "1px solid" !border
+
+
+// Error and Flash Messages
+
+//Error messages
+!error = #F5D1C4
+!red = #ee1111
+!errorText = #FF0000
+
+//Alert messages
+!alert = #fbf7b1
+
+//Success messages
+!success = #98F395
+
+//Flash message color scheme
+=flash(!flashColor, !flashImage)
+  :background = !flashColor
+  :border-color = !flashColor - #666
+  #close
+    :background = !flashColor - #666
+    :border-color = !flashColor - #999
+    :color = !flashColor - #999
+    &:hover
+      :background = !flashColor
+  .message
+    :background = "url('/images/icons/" + !flashImage + ".png') no-repeat center left"

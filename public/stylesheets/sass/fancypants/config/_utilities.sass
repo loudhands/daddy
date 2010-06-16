@@ -1,0 +1,28 @@
+//rounds tabs
+=roundedTop
+  :-moz-border-radius-topright 7px
+  :-moz-border-radius-topleft 7px
+  :-webkit-border-top-right-radius 7px 
+  :-webkit-border-top-left-radius 7px
+
+//rounds anything all sides
+=rounded
+  :-moz-border-radius 20px
+  :-webkit-border-radius 20px
+
+//Clearfix Mixin
+=clearfix
+  :*display inline-block
+  &:after
+    :content " "
+    :display block
+    :height 0
+    :clear both
+    :visibility hidden
+    
+//
+  Since we're using Sass you can simply add the clearfix to the nessicary id's and classes 
+  through Sass like this:
+
+.clearfix
+  +clearfix
