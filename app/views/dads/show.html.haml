@@ -1,0 +1,20 @@
+%h1
+  = @dad.name
+
+%p
+  = image_tag @dad.photo.url 
+  
+
+%p
+  = @dad.description 
+  
+
+%p
+  = twitter_share(dad_url(@dad))
+  
+
+%p
+  = facebook_share(dad_url(@dad))
+  
+
+= link_to "Back", root_path 
