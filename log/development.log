@@ -213,3 +213,198 @@ Processing PublicController#home (for 127.0.0.1 at 2010-06-16 13:59:52) [GET]
   [4;35;1mDad Load (0.4ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
 Rendering public/home
 Completed in 16ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:07:29) [GET]
+
+MissingSourceFile (no such file to load -- bitly):
+  app/models/dad.rb:2
+  app/controllers/public_controller.rb:3:in `home'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (63.7ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:10:50) [GET]
+  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering public/home
+Completed in 36ms (View: 23, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:11:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDad Load (0.2ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
+Rendering dads/show
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined local variable or method `long_url' for #<Class:0x103819260>) on line #12 of app/views/dads/show.html.erb:
+9: </p>
+10: 
+11: <p>
+12:   <a href="http://www.twitter.com/home?status=Who+is+you+daddy+and+what+does+he+do+?+<%= Dad.make_bitly_from(dad_url(@dad)) %>">Twitter!</a>
+13: </p>
+14: 
+15: <%= link_to "Back", root_path %>
+
+    /usr/local/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.2.3/lib/will_paginate/finder.rb:164:in `method_missing'
+    app/models/dad.rb:10:in `make_bitly_from'
+    app/views/dads/show.html.erb:12
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (68.1ms)
+Rendered rescues/_request_and_response (2.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:20:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDad Load (0.2ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
+Rendering dads/show
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined local variable or method `long_url' for #<Class:0x1032d4750>) on line #12 of app/views/dads/show.html.erb:
+9: </p>
+10: 
+11: <p>
+12:   <a href="http://www.twitter.com/home?status=Who+is+you+daddy+and+what+does+he+do+?+<%= Dad.make_bitly_from("#{dad_url(@dad)}") %>">Twitter!</a>
+13: </p>
+14: 
+15: <%= link_to "Back", root_path %>
+
+    /usr/local/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.2.3/lib/will_paginate/finder.rb:164:in `method_missing'
+    app/models/dad.rb:10:in `make_bitly_from'
+    app/views/dads/show.html.erb:12
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (139.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:21:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDad Load (0.2ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
+Rendering dads/show
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined local variable or method `long_url' for #<Class:0x1035c3740>) on line #12 of app/views/dads/show.html.erb:
+9: </p>
+10: 
+11: <p>
+12:   <a href="http://www.twitter.com/home?status=Who+is+you+daddy+and+what+does+he+do+?+<%= Dad.make_bitly_from("/dads/#{@dad.id}") %>">Twitter!</a>
+13: </p>
+14: 
+15: <%= link_to "Back", root_path %>
+
+    /usr/local/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.2.3/lib/will_paginate/finder.rb:164:in `method_missing'
+    app/models/dad.rb:10:in `make_bitly_from'
+    app/views/dads/show.html.erb:12
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (63.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:21:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDad Load (0.2ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
+Rendering dads/show
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined local variable or method `long_url' for #<Class:0x1038e8b50>) on line #12 of app/views/dads/show.html.erb:
+9: </p>
+10: 
+11: <p>
+12:   <a href="http://www.twitter.com/home?status=Who+is+you+daddy+and+what+does+he+do+?+<%= Dad.make_bitly_from("/dads/#{@dad.id}") %>">Twitter!</a>
+13: </p>
+14: 
+15: <%= link_to "Back", root_path %>
+
+    /usr/local/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.2.3/lib/will_paginate/finder.rb:164:in `method_missing'
+    app/models/dad.rb:10:in `make_bitly_from'
+    app/views/dads/show.html.erb:12
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (64.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:21:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDad Load (0.2ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
+Rendering dads/show
+Completed in 24ms (View: 10, DB: 0) | 200 OK [http://localhost/dads/1]
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:22:31) [GET]
+  [4;36;1mDad Load (0.4ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering public/home
+Completed in 18ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:22:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDad Load (0.2ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
+Rendering dads/show
+Completed in 406ms (View: 315, DB: 0) | 200 OK [http://localhost/dads/1]
