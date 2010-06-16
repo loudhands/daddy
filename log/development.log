@@ -494,3 +494,16 @@ Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:35:31) [GET]
   [4;36;1mDad Load (0.3ms)[0m   [0;1mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
 Rendering dads/show
 Completed in 288ms (View: 273, DB: 0) | 200 OK [http://localhost/dads/1]
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:38:53) [GET]
+  [4;35;1mDad Load (0.4ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering public/home
+Completed in 283ms (View: 270, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:38:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDad Load (0.2ms)[0m   [0;1mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
+Rendering dads/show
+Completed in 288ms (View: 274, DB: 0) | 200 OK [http://localhost/dads/1]
