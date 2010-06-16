@@ -10,7 +10,7 @@
       %p
         = link_to image_tag(dad.photo.url), dad_path(dad)
       %p
-        = dad.name
+        = link_to dad.name, dad_path(dad)
       %p
         = dad.description
       %p

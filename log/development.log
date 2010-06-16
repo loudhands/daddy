@@ -1003,3 +1003,78 @@ Processing DadsController#show (for 127.0.0.1 at 2010-06-16 15:20:29) [GET]
   [4;36;1mDad Load (0.2ms)[0m   [0;1mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
 Rendering dads/show
 Completed in 244ms (View: 237, DB: 0) | 200 OK [http://localhost/dads/1]
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:21:27) [GET]
+  [4;35;1mDad Load (0.8ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering public/home
+Completed in 740ms (View: 733, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:21:27) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing DadsController#show (for 127.0.0.1 at 2010-06-16 15:21:30) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mDad Load (0.2ms)[0m   [0;1mSELECT * FROM "dads" WHERE ("dads"."id" = 2) [0m
+Rendering dads/show
+Completed in 229ms (View: 223, DB: 0) | 200 OK [http://localhost/dads/2]
+
+
+Processing DadsController#show (for 127.0.0.1 at 2010-06-16 15:26:56) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mDad Load (0.3ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 3) [0m
+Rendering dads/show
+Completed in 215ms (View: 209, DB: 0) | 200 OK [http://localhost/dads/3]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:26:56) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing DadsController#new (for 127.0.0.1 at 2010-06-16 15:29:43) [GET]
+Rendering dads/new
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/dads/new]
+
+
+Processing DadsController#create (for 127.0.0.1 at 2010-06-16 15:30:22) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"IBjhyh/ZimzaKoWKVoC8UmqOD1Fh/wxy1byTfYxAyzE=", "dad"=>{"photo"=>#<File:/var/folders/Wv/WvbFbKE-FFybn7rj-3QLkE+++TI/-Tmp-/RackMultipart.77631.0>, "name"=>"test", "description"=>"My dad does everything everyone could ever do ever ever ever ever ever."}}
+  [4;36;1mDad Create (0.3ms)[0m   [0;1mINSERT INTO "dads" ("name", "updated_at", "photo_file_name", "photo_file_size", "photo_updated_at", "description", "photo_content_type", "created_at") VALUES('test', '2010-06-16 19:30:22', '359px-Arnold_Schwarzenegger_2003.jpg', 31129, '2010-06-16 19:30:22', 'My dad does everything everyone could ever do ever ever ever ever ever.', 'image/jpeg', '2010-06-16 19:30:22')[0m
+[paperclip] Saving attachments.
+[paperclip] saving photos/4/original/359px-Arnold_Schwarzenegger_2003.jpg
+
+ArgumentError (wrong number of arguments (5 for 4)):
+  /Library/Ruby/Gems/1.8/gems/right_http_connection-1.2.4/lib/net_fix.rb:85:in `send_request_with_body_stream'
+  /Library/Ruby/Gems/1.8/gems/right_http_connection-1.2.4/lib/net_fix.rb:85:in `exec'
+  /Library/Ruby/Gems/1.8/gems/right_http_connection-1.2.4/lib/net_fix.rb:144:in `request'
+  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/connection.rb:45:in `request'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:543:in `start'
+  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/connection.rb:52:in `request'
+  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/base.rb:69:in `request'
+  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/base.rb:88:in `put'
+  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/object.rb:241:in `store'
+  paperclip (2.3.1.1) lib/paperclip/storage.rb:202:in `flush_writes'
+  paperclip (2.3.1.1) lib/paperclip/storage.rb:199:in `each'
+  paperclip (2.3.1.1) lib/paperclip/storage.rb:199:in `flush_writes'
+  paperclip (2.3.1.1) lib/paperclip/attachment.rb:142:in `save'
+  paperclip (2.3.1.1) lib/paperclip.rb:334:in `send'
+  paperclip (2.3.1.1) lib/paperclip.rb:334:in `save_attached_files'
+  paperclip (2.3.1.1) lib/paperclip.rb:327:in `each_attachment'
+  paperclip (2.3.1.1) lib/paperclip.rb:326:in `each'
+  paperclip (2.3.1.1) lib/paperclip.rb:326:in `each_attachment'
+  paperclip (2.3.1.1) lib/paperclip.rb:333:in `save_attached_files'
+  app/controllers/dads_controller.rb:8:in `create'
+  haml (2.2.17) rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (42.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
