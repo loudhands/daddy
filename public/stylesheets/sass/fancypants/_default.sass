@@ -4,15 +4,15 @@
   here additional padding-top specific to the element is also added aftwerward.
 
 body
-  :background = !wrapper
+  :background = !body
 //basic layout elements
 #wrapper
   :background = !wrapper
   :width 100%
   #top-bar
-    :background = !topBar
+    :background url('../images/top-bar-bg.png')
     //:border-bottom 1px solid #999
-    :height 80px
+    :height 105px
     &.tabs
       :height 100px        
     #top-bar-inner
@@ -22,12 +22,12 @@ body
       :margin 0 auto
       //IE6 hack (top padding not being respected)
       :*margin-top 20px
-      :width 666px
+      :width 960px
       +clearfix
       a
         :cursor pointer
       #logo
-        :background url("/images/logos/logo.png")
+        //:background url("/images/logos/logo.png")
         :cursor pointer
         :float left
         :height 30px
@@ -81,8 +81,8 @@ body
         
   #content
     +clearfix
-    :min-height 500px
-    :width 666px
+    :margin 0 auto
+    :width 960px
     .tagline
       +baseLine
       +contentTaglineType

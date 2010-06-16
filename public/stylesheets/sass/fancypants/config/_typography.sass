@@ -45,14 +45,18 @@ body
 
 //declare some headers
 h1
-  +header(36px)
+  +typeSerif
+  +header(30px)
   :color = !h1
-  :letter-spacing 1px
+  :font-weight bold
+  :font-style italic
   
 h2
-  +header(24px)
+  +typeSerif
+  +header(18px)
+  :border-bottom = "1px solid" !h2
   :color = !h2
-  :letter-spacing 1px
+  :font-weight bold
   
 h3
   +header(16px)
@@ -62,8 +66,8 @@ h3
 
 a
   :color = !link
-  :text-decoration none
   &:hover
+    :color = !link + #333
     :text-decoration underline
 
 p, table, .paginate

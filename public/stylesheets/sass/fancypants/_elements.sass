@@ -5,14 +5,15 @@
 //form elements
 form
   fieldset
+    :float left
+    :width 100%
     label
       +formLabel
     input
-      :background #F5F5F5
       :border = "1px solid" #bbb
       :height 15px
       :padding 5px
-      :width 96%
+      :width 99%
       :-moz-border-radius 2px
       :-webkit-border-radius 2px
       &:focus
@@ -22,8 +23,6 @@ form
       :min-height 100px
       :resize none
       :width 100%
-      &:focus
-        :background #FFFBE2
     .checkbox
       label
         :float left
