@@ -438,3 +438,59 @@ Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:33:25) [GET]
   [4;36;1mDad Load (0.5ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
 Rendering public/home
 Completed in 20ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:34:37) [GET]
+  [4;35;1mDad Load (0.4ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering public/home
+Completed in 21ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:35:03) [GET]
+  [4;36;1mDad Load (0.4ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering public/home
+
+ActionView::TemplateError (URL you tried to shorten was invalid. - '1206') on line #18 of app/views/public/home.html.erb:
+15:         <%= dad.description %>
+16:       </p>
+17:       <p>
+18:         <%= twitter_share(dad_url(dad))%>
+19:       </p>
+20:       <p>
+21:         <%= facebook_share(dad_url(dad))%>
+
+    bitly (0.5.1) lib/bitly/url.rb:12:in `initialize'
+    bitly (0.5.1) lib/bitly/client.rb:40:in `new'
+    bitly (0.5.1) lib/bitly/client.rb:40:in `shorten'
+    app/models/dad.rb:10:in `make_bitly_from'
+    app/helpers/dads_helper.rb:7:in `twitter_share'
+    app/views/public/home.html.erb:18
+    app/views/public/home.html.erb:6:in `each'
+    app/views/public/home.html.erb:6
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (66.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:35:18) [GET]
+  [4;35;1mDad Load (0.5ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering public/home
+Completed in 363ms (View: 275, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:35:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDad Load (0.3ms)[0m   [0;1mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
+Rendering dads/show
+Completed in 288ms (View: 273, DB: 0) | 200 OK [http://localhost/dads/1]

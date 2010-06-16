@@ -4,6 +4,6 @@ module DadsHelper
   end
   
   def twitter_share(link)
-    %{<a href="http://www.twitter.com/home?status=Who+is+you+daddy+and+what+does+he+do?+<%= Dad.make_bitly_from('#{link}') %>">Twitter!</a>}
+    %{<a href="http://www.twitter.com/home?status=Who+is+you+daddy+and+what+does+he+do?+#{Dad.make_bitly_from(link)}">Twitter!</a>}
   end
 end
