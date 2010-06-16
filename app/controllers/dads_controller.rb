@@ -1,10 +1,10 @@
 class DadsController < ApplicationController
+  before_filter :init_dad, :except => :show
+  
   def new
-    @dad = Dad.new(params[:dad])
   end
   
   def create
-    @dad = Dad.new(params[:dad])
     if @dad.save
       redirect_to root_path
       flash[:notice] = "Thanks for adding your dad!"
@@ -13,11 +13,13 @@ class DadsController < ApplicationController
     end
   end
 
-  def index
-  end
-
   def show
     @dad = Dad.find(params[:id])
   end
-
+  
+  private
+  
+  def init_dad
+    @dad = Dad.new(params[:dad])
+  end
 end

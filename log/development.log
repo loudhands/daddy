@@ -507,3 +507,49 @@ Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:38:55) [GET]
   [4;36;1mDad Load (0.2ms)[0m   [0;1mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
 Rendering dads/show
 Completed in 288ms (View: 274, DB: 0) | 200 OK [http://localhost/dads/1]
+
+
+Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:42:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDad Load (0.2ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
+Rendering dads/show
+Completed in 289ms (View: 275, DB: 0) | 200 OK [http://localhost/dads/1]
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:42:53) [GET]
+  [4;36;1mDad Load (0.4ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering public/home
+Completed in 292ms (View: 279, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing DadsController#new (for 127.0.0.1 at 2010-06-16 14:42:54) [GET]
+Rendering dads/new
+Completed in 27ms (View: 14, DB: 0) | 200 OK [http://localhost/dads/new]
+
+
+Processing DadsController#create (for 127.0.0.1 at 2010-06-16 14:43:06) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"Amq/YyeJOV/8OoWC5Nt1gCdEJ4q2ZP2cXECZCSk/V/U=", "dad"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart20100616-2345-chdc8e-0>, "name"=>"Test Dad", "description"=>"Mercenary"}}
+  [4;35;1mDad Create (0.3ms)[0m   [0mINSERT INTO "dads" ("name", "created_at", "photo_file_size", "updated_at", "photo_file_name", "photo_content_type", "photo_updated_at", "description") VALUES('Test Dad', '2010-06-16 18:43:06', 32285, '2010-06-16 18:43:06', 'optimusprime.jpg', 'image/jpeg', '2010-06-16 18:43:06', 'Mercenary')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/michael/Desktop/daddy/public/system/photos/2/original/optimusprime.jpg
+Redirected to http://localhost:3000/
+Completed in 28ms (DB: 0) | 302 Found [http://localhost/dads]
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:43:06) [GET]
+  [4;36;1mDad Load (0.5ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering public/home
+Completed in 658ms (View: 644, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:43:13) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mDad Load (0.2ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 2) [0m
+Rendering dads/show
+Completed in 278ms (View: 264, DB: 0) | 200 OK [http://localhost/dads/2]
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:43:16) [GET]
+  [4;36;1mDad Load (0.5ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering public/home
+Completed in 547ms (View: 534, DB: 1) | 200 OK [http://localhost/]
