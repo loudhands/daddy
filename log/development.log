@@ -1078,3 +1078,32 @@ ArgumentError (wrong number of arguments (5 for 4)):
 Rendered rescues/_trace (42.0ms)
 Rendered rescues/_request_and_response (0.3ms)
 Rendering rescues/layout (internal_server_error)
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:36:37) [GET]
+  [4;36;1mDad Load (0.7ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering public/home
+Completed in 1201ms (View: 1196, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:36:49) [GET]
+  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering public/home
+Completed in 665ms (View: 659, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:37:04) [GET]
+  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering public/home
+Completed in 705ms (View: 700, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:37:05) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
