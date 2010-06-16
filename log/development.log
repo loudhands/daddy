@@ -2545,3 +2545,54 @@ ActionController::RoutingError (No route matches "/photos/original/missing.png" 
   
 
 Rendering rescues/layout (not_found)
+
+
+Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:47:29) [GET]
+Rendering template within layouts/application
+Rendering dads/new
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/dads/new]
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:47:50) [GET]
+  [4;36;1mDad Load (57.0ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering public/home
+Completed in 898ms (View: 837, DB: 57) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:47:51) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:08:50) [GET]
+  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering public/home
+Completed in 667ms (View: 662, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:08:51) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:35:37) [GET]
+  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering public/home
+Completed in 780ms (View: 775, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:35:37) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
