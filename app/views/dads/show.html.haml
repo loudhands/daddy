@@ -2,7 +2,10 @@
   = @dad.name
 
 %p
-  = image_tag @dad.photo.url 
+  - if !dad.photo || @dad.photo.size.blank?
+    = image_tag("rails.png")
+  - else
+    = image_tag(@dad.photo.url)
   
 
 %p

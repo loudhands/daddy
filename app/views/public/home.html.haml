@@ -10,7 +10,11 @@
     - @dads.each do |dad|
       .dad
         .photo
-          = link_to image_tag(dad.photo.url), dad_path(dad)
+          - if !dad.photo || dad.photo.size.blank?
+            =# TODO: add a missing.png file
+            = link_to image_tag("rails.png"), dad_path(dad)
+          - else
+            = link_to image_tag(dad.photo.url), dad_path(dad)
         .info
           %h1
             = link_to dad.name, dad_path(dad)

@@ -1,225 +1,16 @@
-  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
-  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
-  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
-  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
-  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
-Migrating to CreateDads (20100616173359)
-  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "dads" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "created_at" datetime, "updated_at" datetime) [0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100616173359')[0m
-  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
-  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("dads")[0m
-  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
-Migrating to CreateDads (20100616173359)
-Migrating to AddAttachmentsPhotoToDad (20100616174516)
-  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
-  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "dads" ADD "photo_file_name" varchar(255)[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mALTER TABLE "dads" ADD "photo_content_type" varchar(255)[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mALTER TABLE "dads" ADD "photo_file_size" integer[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mALTER TABLE "dads" ADD "photo_updated_at" datetime[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100616174516')[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("dads")[0m
-/!\ FAILSAFE /!\  Wed Jun 16 13:49:55 -0400 2010
-  Status: 500 Internal Server Error
-  no such file to load -- sqlite3
-    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
-    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
-    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:156:in `require'
-    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:521:in `new_constants_in'
-    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/dependencies.rb:156:in `require'
-    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
-    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
-    /usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
-    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
-    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
-    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
-    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
-    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
-    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
-    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
-    /usr/local/lib/ruby/1.8/monitor.rb:242:in `synchronize'
-    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
-    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
-    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
-    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
-    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
-    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
-    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
-    /usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
-    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
-    /usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
-    /usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
-    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
-    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
-    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
-    /usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
-    /usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
-    /usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
-    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
-    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
-    /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
-    /usr/local/lib/ruby/gems/1.8/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
-    /usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
-    /usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
-    /usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
-    /usr/local/lib/ruby/gems/1.8/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
-    /usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
-    /usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:48:in `service'
-    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-    /usr/local/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/handler/webrick.rb:14:in `run'
-    /usr/local/lib/ruby/gems/1.8/gems/rails-2.3.8/lib/commands/server.rb:111
-    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
-    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
-    script/server:3
 
 
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 13:50:09) [GET]
+Processing PublicController#home (for 127.0.0.1 at 2010-06-17 11:17:33) [GET]
+  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
 Rendering public/home
-Completed in 33ms (View: 29, DB: 0) | 200 OK [http://localhost/]
+Completed in 985ms (View: 972, DB: 1) | 200 OK [http://localhost/]
 
 
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 13:50:42) [GET]
-  [4;36;1mDad Load (0.3ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 11ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 11:17:34) [GET]
 
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 13:50:55) [GET]
-  [4;35;1mDad Load (0.3ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 17ms (View: 7, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 13:51:16) [GET]
-  [4;36;1mDad Load (0.3ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 18ms (View: 8, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 13:51:18) [GET]
-Rendering dads/new
-Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 13:54:24) [GET]
-Rendering dads/new
-
-ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/dads/new.html.erb:
-1: <% form_for @dad, :html => {:multipart => true} do |f| %>
-2:   <p>
-3:     <%= f.label :name %><br />
-4:     <%= f.text_field :name %>
-
-    app/views/dads/new.html.erb:1
-    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-
-Rendered rescues/_trace (66.4ms)
-Rendered rescues/_request_and_response (2.1ms)
-Rendering rescues/layout (internal_server_error)
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 13:56:35) [GET]
-Rendering dads/new
-Completed in 34ms (View: 24, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#create (for 127.0.0.1 at 2010-06-16 13:56:51) [POST]
-  Parameters: {"commit"=>"Save", "authenticity_token"=>"Amq/YyeJOV/8OoWC5Nt1gCdEJ4q2ZP2cXECZCSk/V/U=", "dad"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart20100616-2311-1asnnlq-0>, "name"=>"Michael Maloney", "description"=>"Stuff"}}
-  [4;35;1mDad Create (0.3ms)[0m   [0mINSERT INTO "dads" ("name", "created_at", "photo_file_size", "updated_at", "photo_file_name", "photo_content_type", "photo_updated_at", "description") VALUES('Michael Maloney', '2010-06-16 17:56:51', 85857, '2010-06-16 17:56:51', '789px-Chinchillapets.jpg', 'image/jpeg', '2010-06-16 17:56:51', 'Stuff')[0m
-[paperclip] Saving attachments.
-[paperclip] saving /Users/michael/Desktop/daddy/public/system/photos/1/original/789px-Chinchillapets.jpg
-Redirected to http://localhost:3000/
-Completed in 40ms (DB: 0) | 302 Found [http://localhost/dads]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 13:56:51) [GET]
-  [4;36;1mDad Load (0.9ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 21ms (View: 7, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 13:57:09) [GET]
-  [4;35;1mDad Load (0.4ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 22ms (View: 12, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 13:57:45) [GET]
-  [4;36;1mDad Load (0.4ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 16ms (View: 6, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 13:59:48) [GET]
-  [4;35;1mDad Load (0.4ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 16ms (View: 6, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing DadsController#show (for 127.0.0.1 at 2010-06-16 13:59:50) [GET]
-  Parameters: {"id"=>"1"}
-  [4;36;1mDad Load (0.2ms)[0m   [0;1mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
-Rendering dads/show
-Completed in 22ms (View: 11, DB: 0) | 200 OK [http://localhost/dads/1]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 13:59:52) [GET]
-  [4;35;1mDad Load (0.4ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 16ms (View: 6, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:07:29) [GET]
-
-MissingSourceFile (no such file to load -- bitly):
-  app/models/dad.rb:2
-  app/controllers/public_controller.rb:3:in `home'
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  haml (3.0.12) rails/./lib/sass/plugin/rack.rb:41:in `call'
   /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
   /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
   /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
@@ -231,3424 +22,570 @@ MissingSourceFile (no such file to load -- bitly):
   /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
   /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
 
-Rendered rescues/_trace (63.7ms)
-Rendered rescues/_request_and_response (0.5ms)
-Rendering rescues/layout (internal_server_error)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:10:50) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 36ms (View: 23, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:11:02) [GET]
-  Parameters: {"id"=>"1"}
-  [4;35;1mDad Load (0.2ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
-Rendering dads/show
-  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-
-ActionView::TemplateError (undefined local variable or method `long_url' for #<Class:0x103819260>) on line #12 of app/views/dads/show.html.erb:
-9: </p>
-10: 
-11: <p>
-12:   <a href="http://www.twitter.com/home?status=Who+is+you+daddy+and+what+does+he+do+?+<%= Dad.make_bitly_from(dad_url(@dad)) %>">Twitter!</a>
-13: </p>
-14: 
-15: <%= link_to "Back", root_path %>
-
-    /usr/local/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.2.3/lib/will_paginate/finder.rb:164:in `method_missing'
-    app/models/dad.rb:10:in `make_bitly_from'
-    app/views/dads/show.html.erb:12
-    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-
-Rendered rescues/_trace (68.1ms)
-Rendered rescues/_request_and_response (2.1ms)
-Rendering rescues/layout (internal_server_error)
-
-
-Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:20:40) [GET]
-  Parameters: {"id"=>"1"}
-  [4;35;1mDad Load (0.2ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
-Rendering dads/show
-  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-
-ActionView::TemplateError (undefined local variable or method `long_url' for #<Class:0x1032d4750>) on line #12 of app/views/dads/show.html.erb:
-9: </p>
-10: 
-11: <p>
-12:   <a href="http://www.twitter.com/home?status=Who+is+you+daddy+and+what+does+he+do+?+<%= Dad.make_bitly_from("#{dad_url(@dad)}") %>">Twitter!</a>
-13: </p>
-14: 
-15: <%= link_to "Back", root_path %>
-
-    /usr/local/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.2.3/lib/will_paginate/finder.rb:164:in `method_missing'
-    app/models/dad.rb:10:in `make_bitly_from'
-    app/views/dads/show.html.erb:12
-    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-
-Rendered rescues/_trace (139.8ms)
-Rendered rescues/_request_and_response (0.4ms)
-Rendering rescues/layout (internal_server_error)
-
-
-Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:21:17) [GET]
-  Parameters: {"id"=>"1"}
-  [4;35;1mDad Load (0.2ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
-Rendering dads/show
-  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-
-ActionView::TemplateError (undefined local variable or method `long_url' for #<Class:0x1035c3740>) on line #12 of app/views/dads/show.html.erb:
-9: </p>
-10: 
-11: <p>
-12:   <a href="http://www.twitter.com/home?status=Who+is+you+daddy+and+what+does+he+do+?+<%= Dad.make_bitly_from("/dads/#{@dad.id}") %>">Twitter!</a>
-13: </p>
-14: 
-15: <%= link_to "Back", root_path %>
-
-    /usr/local/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.2.3/lib/will_paginate/finder.rb:164:in `method_missing'
-    app/models/dad.rb:10:in `make_bitly_from'
-    app/views/dads/show.html.erb:12
-    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-
-Rendered rescues/_trace (63.9ms)
-Rendered rescues/_request_and_response (0.4ms)
-Rendering rescues/layout (internal_server_error)
-
-
-Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:21:18) [GET]
-  Parameters: {"id"=>"1"}
-  [4;35;1mDad Load (0.2ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
-Rendering dads/show
-  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-
-ActionView::TemplateError (undefined local variable or method `long_url' for #<Class:0x1038e8b50>) on line #12 of app/views/dads/show.html.erb:
-9: </p>
-10: 
-11: <p>
-12:   <a href="http://www.twitter.com/home?status=Who+is+you+daddy+and+what+does+he+do+?+<%= Dad.make_bitly_from("/dads/#{@dad.id}") %>">Twitter!</a>
-13: </p>
-14: 
-15: <%= link_to "Back", root_path %>
-
-    /usr/local/lib/ruby/gems/1.8/gems/mislav-will_paginate-2.2.3/lib/will_paginate/finder.rb:164:in `method_missing'
-    app/models/dad.rb:10:in `make_bitly_from'
-    app/views/dads/show.html.erb:12
-    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-
-Rendered rescues/_trace (64.0ms)
-Rendered rescues/_request_and_response (0.4ms)
-Rendering rescues/layout (internal_server_error)
-
-
-Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:21:27) [GET]
-  Parameters: {"id"=>"1"}
-  [4;35;1mDad Load (0.2ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
-Rendering dads/show
-Completed in 24ms (View: 10, DB: 0) | 200 OK [http://localhost/dads/1]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:22:31) [GET]
-  [4;36;1mDad Load (0.4ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 18ms (View: 6, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:22:33) [GET]
-  Parameters: {"id"=>"1"}
-  [4;35;1mDad Load (0.2ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
-Rendering dads/show
-Completed in 406ms (View: 315, DB: 0) | 200 OK [http://localhost/dads/1]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:25:16) [GET]
-  [4;36;1mDad Load (0.4ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 282ms (View: 270, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:31:56) [GET]
-  [4;35;1mDad Load (0.5ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 26ms (View: 13, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:32:20) [GET]
-  [4;36;1mDad Load (0.4ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 19ms (View: 7, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:33:23) [GET]
-  [4;35;1mDad Load (0.5ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 24ms (View: 9, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:33:25) [GET]
-  [4;36;1mDad Load (0.5ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 20ms (View: 7, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:34:37) [GET]
-  [4;35;1mDad Load (0.4ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 21ms (View: 7, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:35:03) [GET]
-  [4;36;1mDad Load (0.4ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-
-ActionView::TemplateError (URL you tried to shorten was invalid. - '1206') on line #18 of app/views/public/home.html.erb:
-15:         <%= dad.description %>
-16:       </p>
-17:       <p>
-18:         <%= twitter_share(dad_url(dad))%>
-19:       </p>
-20:       <p>
-21:         <%= facebook_share(dad_url(dad))%>
-
-    bitly (0.5.1) lib/bitly/url.rb:12:in `initialize'
-    bitly (0.5.1) lib/bitly/client.rb:40:in `new'
-    bitly (0.5.1) lib/bitly/client.rb:40:in `shorten'
-    app/models/dad.rb:10:in `make_bitly_from'
-    app/helpers/dads_helper.rb:7:in `twitter_share'
-    app/views/public/home.html.erb:18
-    app/views/public/home.html.erb:6:in `each'
-    app/views/public/home.html.erb:6
-    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
-    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
-
-Rendered rescues/_trace (66.1ms)
-Rendered rescues/_request_and_response (0.4ms)
-Rendering rescues/layout (internal_server_error)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:35:18) [GET]
-  [4;35;1mDad Load (0.5ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 363ms (View: 275, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:35:31) [GET]
-  Parameters: {"id"=>"1"}
-  [4;36;1mDad Load (0.3ms)[0m   [0;1mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
-Rendering dads/show
-Completed in 288ms (View: 273, DB: 0) | 200 OK [http://localhost/dads/1]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:38:53) [GET]
-  [4;35;1mDad Load (0.4ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 283ms (View: 270, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:38:55) [GET]
-  Parameters: {"id"=>"1"}
-  [4;36;1mDad Load (0.2ms)[0m   [0;1mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
-Rendering dads/show
-Completed in 288ms (View: 274, DB: 0) | 200 OK [http://localhost/dads/1]
-
-
-Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:42:51) [GET]
-  Parameters: {"id"=>"1"}
-  [4;35;1mDad Load (0.2ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
-Rendering dads/show
-Completed in 289ms (View: 275, DB: 0) | 200 OK [http://localhost/dads/1]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:42:53) [GET]
-  [4;36;1mDad Load (0.4ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 292ms (View: 279, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 14:42:54) [GET]
-Rendering dads/new
-Completed in 27ms (View: 14, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#create (for 127.0.0.1 at 2010-06-16 14:43:06) [POST]
-  Parameters: {"commit"=>"Save", "authenticity_token"=>"Amq/YyeJOV/8OoWC5Nt1gCdEJ4q2ZP2cXECZCSk/V/U=", "dad"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart20100616-2345-chdc8e-0>, "name"=>"Test Dad", "description"=>"Mercenary"}}
-  [4;35;1mDad Create (0.3ms)[0m   [0mINSERT INTO "dads" ("name", "created_at", "photo_file_size", "updated_at", "photo_file_name", "photo_content_type", "photo_updated_at", "description") VALUES('Test Dad', '2010-06-16 18:43:06', 32285, '2010-06-16 18:43:06', 'optimusprime.jpg', 'image/jpeg', '2010-06-16 18:43:06', 'Mercenary')[0m
-[paperclip] Saving attachments.
-[paperclip] saving /Users/michael/Desktop/daddy/public/system/photos/2/original/optimusprime.jpg
-Redirected to http://localhost:3000/
-Completed in 28ms (DB: 0) | 302 Found [http://localhost/dads]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:43:06) [GET]
-  [4;36;1mDad Load (0.5ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 658ms (View: 644, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing DadsController#show (for 127.0.0.1 at 2010-06-16 14:43:13) [GET]
-  Parameters: {"id"=>"2"}
-  [4;35;1mDad Load (0.2ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 2) [0m
-Rendering dads/show
-Completed in 278ms (View: 264, DB: 0) | 200 OK [http://localhost/dads/2]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:43:16) [GET]
-  [4;36;1mDad Load (0.5ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 547ms (View: 534, DB: 1) | 200 OK [http://localhost/]
-  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
-Migrating to CreateDads (20100616173359)
-Migrating to AddAttachmentsPhotoToDad (20100616174516)
-  [4;36;1mSQL (6.5ms)[0m   [0;1mselect sqlite_version(*)[0m
-  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
-  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("dads")[0m
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:52:26) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 532ms (View: 527, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 14:52:26) [GET]
-  Parameters: {"1276711011"=>nil}
-
-ActionController::RoutingError (No route matches "/system/photos/1/original/789px-Chinchillapets.jpg" with {:method=>:get}):
-  
-
 Rendering rescues/layout (not_found)
 
 
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 14:52:26) [GET]
-  Parameters: {"1276713786"=>nil}
-
-ActionController::RoutingError (No route matches "/system/photos/2/original/optimusprime.jpg" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:53:12) [GET]
-  [4;35;1mDad Load (0.5ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+Processing DadsController#show (for 127.0.0.1 at 2010-06-17 11:18:36) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mDad Load (0.2ms)[0m   [0;1mSELECT * FROM "dads" WHERE ("dads"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering dads/show
+Completed in 313ms (View: 298, DB: 0) | 200 OK [http://localhost/dads/3]
 
 
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:55:35) [GET]
-  [4;36;1mDad Load (0.5ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 457ms (View: 452, DB: 0) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 14:55:35) [GET]
-  Parameters: {"1276711011"=>nil}
-
-ActionController::RoutingError (No route matches "/system/photos/1/original/789px-Chinchillapets.jpg" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 14:55:35) [GET]
-  Parameters: {"1276713786"=>nil}
-
-ActionController::RoutingError (No route matches "/system/photos/2/original/optimusprime.jpg" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 14:59:24) [GET]
-Rendering dads/new
-ERROR: compiling _run_haml_app47views47dads47new46html46haml RAISED compile error
-/Users/robert/Desktop/daddy/app/views/dads/new.html.haml:17: syntax error, unexpected tSTRING_BEG, expecting kDO or '{' or '('
-/Users/robert/Desktop/daddy/app/views/dads/new.html.haml:17: unterminated string meets end of file
-Function body:           def _run_haml_app47views47dads47new46html46haml(local_assigns)
-            old_output_buffer = output_buffer;;begin;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:attr_wrapper=>"'", :preserve=>["textarea", "pre", "code"], :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :format=>:xhtml, :encoding=>nil, :ugly=>false, :escape_html=>false});_erbout = _hamlout.buffer;__in_erb_template = true;;form_for @dad, :html => {:multipart => true} do |f|;
-
-_hamlout.push_text("<p>\n  #{_hamlout.adjust_tabs(1); haml_temp =  f.label :name, "Your Dad's name:"
-_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n  <br />\n", 0, false);
-_hamlout.push_text("  #{haml_temp =  f.text_field :name
-_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n</p>\n<p>\n", 0, false);
-_hamlout.push_text("  #{haml_temp =  f.label :description, "What does he do:"
-_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n  <br />\n", 0, false);
-_hamlout.push_text("  #{haml_temp =  f.text_area :description
-_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n</p>\n<p>\n", 0, false);
-_hamlout.push_text("  #{haml_temp =  f.label :photo, "Add a photo?"
-_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n  <br />\n", 0, false);
-_hamlout.push_text("  #{haml_temp =  f.file_field :photo
-_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n</p>\n<p>\n", 0, false);
-_hamlout.push_text("  #{haml_temp =  f.submit 'Save'
-_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n", 0, false);
-_hamlout.push_text("</p>\n", -1, false);end;_hamlout.push_text("#{haml_temp =  link_to "Back", root_path %>
-_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n", 0, false);_erbout;ensure;@haml_buffer = @haml_buffer.upper;end;
-          ensure
-            self.output_buffer = old_output_buffer
-          end
-Backtrace: /Users/robert/Desktop/daddy/app/views/dads/new.html.haml:17:in `compile!'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:61:in `compile'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:28:in `render'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/template.rb:205:in `render_template'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:265:in `render_without_haml'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.17/lib/haml/helpers/action_view_mods.rb:13:in `render'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1250:in `render_for_file'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:936:in `render_without_benchmark'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
-/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
-/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1326:in `default_render'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
-/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
-/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `sass_old_process'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.17/rails/../lib/sass/plugin/rails.rb:19:in `process'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:391:in `process'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:386:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/routing/route_set.rb:438:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:87:in `dispatch'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
-/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
-/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
-/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
-/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
-/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
-/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
-/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
-/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/chunked.rb:15:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:67:in `process'
-/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
-/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
-/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
-/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
-/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
-/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
-/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
-/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
-/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
-/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:38:in `run'
-/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/commands/server.rb:111
-/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
-/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
-script/server:3
-
-ActionView::TemplateError (compile error
-/Users/robert/Desktop/daddy/app/views/dads/new.html.haml:17: syntax error, unexpected tSTRING_BEG, expecting kDO or '{' or '('
-/Users/robert/Desktop/daddy/app/views/dads/new.html.haml:17: unterminated string meets end of file) on line #17 of app/views/dads/new.html.haml:
-14:   %p
-15:     = f.submit 'Save'
-16: 
-17: = link_to "Back", root_path %>
-
-    app/views/dads/new.html.haml:17:in `compile!'
-    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
-    haml (2.2.17) rails/./lib/sass/plugin/rails.rb:19:in `process'
-
-Rendered rescues/_trace (27.2ms)
-Rendered rescues/_request_and_response (1.1ms)
-Rendering rescues/layout (internal_server_error)
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 14:59:38) [GET]
-Rendering dads/new
-Completed in 62ms (View: 56, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#create (for 127.0.0.1 at 2010-06-16 14:59:41) [POST]
-  Parameters: {"commit"=>"Save", "authenticity_token"=>"IBjhyh/ZimzaKoWKVoC8UmqOD1Fh/wxy1byTfYxAyzE=", "dad"=>{"name"=>"tasdf", "description"=>"asdf"}}
-  [4;35;1mDad Create (0.4ms)[0m   [0mINSERT INTO "dads" ("name", "updated_at", "photo_file_name", "photo_file_size", "photo_updated_at", "description", "photo_content_type", "created_at") VALUES('tasdf', '2010-06-16 18:59:41', NULL, NULL, NULL, 'asdf', NULL, '2010-06-16 18:59:41')[0m
-[paperclip] Saving attachments.
-Redirected to http://localhost:3000/
-Completed in 21ms (DB: 0) | 302 Found [http://localhost/dads]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 14:59:41) [GET]
-  [4;36;1mDad Load (0.5ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 764ms (View: 760, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 14:59:42) [GET]
-  Parameters: {"1276711011"=>nil}
-
-ActionController::RoutingError (No route matches "/system/photos/1/original/789px-Chinchillapets.jpg" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 14:59:42) [GET]
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 11:18:37) [GET]
 
 ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
+  haml (3.0.12) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
 
 Rendering rescues/layout (not_found)
 
 
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 14:59:42) [GET]
-  Parameters: {"1276713786"=>nil}
-
-ActionController::RoutingError (No route matches "/system/photos/2/original/optimusprime.jpg" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:03:01) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Processing PublicController#home (for 127.0.0.1 at 2010-06-17 11:19:00) [GET]
+  [4;35;1mDad Load (0.7ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
 Rendering public/home
-Completed in 1119ms (View: 1114, DB: 1) | 200 OK [http://localhost/]
+Completed in 2901ms (View: 2887, DB: 1) | 200 OK [http://localhost/]
 
 
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:03:02) [GET]
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 11:19:03) [GET]
 
 ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
+  haml (3.0.12) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
 
 Rendering rescues/layout (not_found)
-  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
-Migrating to CreateDads (20100616173359)
-Migrating to AddAttachmentsPhotoToDad (20100616174516)
-  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
-  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
-  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("dads")[0m
 
 
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:19:01) [GET]
+Processing PublicController#home (for 127.0.0.1 at 2010-06-17 11:23:04) [GET]
+  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering public/home
+Completed in 1919ms (View: 1905, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 11:23:06) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  haml (3.0.12) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing DadsController#new (for 127.0.0.1 at 2010-06-17 11:23:08) [GET]
+Rendering template within layouts/application
+Rendering dads/new
+Completed in 50ms (View: 36, DB: 0) | 200 OK [http://localhost/dads/new]
+
+
+Processing DadsController#create (for 127.0.0.1 at 2010-06-17 11:23:20) [POST]
+  Parameters: {"commit"=>"Add Dad", "authenticity_token"=>"Amq/YyeJOV/8OoWC5Nt1gCdEJ4q2ZP2cXECZCSk/V/U=", "dad"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart20100617-3890-erz307-0>, "name"=>"Other Dad", "description"=>"Chicken"}}
+  [4;35;1mDad Create (0.4ms)[0m   [0mINSERT INTO "dads" ("name", "created_at", "photo_file_size", "updated_at", "photo_file_name", "photo_content_type", "photo_updated_at", "description") VALUES('Other Dad', '2010-06-17 15:23:20', 32768, '2010-06-17 15:23:20', 'trex.jpg', 'image/jpeg', '2010-06-17 15:23:20', 'Chicken')[0m
+[paperclip] Saving attachments.
+[paperclip] saving photos/4/original/trex.jpg
+
+ArgumentError (wrong number of arguments (5 for 4)):
+  /usr/local/lib/ruby/gems/1.8/gems/right_http_connection-1.2.4/lib/net_fix.rb:85:in `send_request_with_body_stream'
+  /usr/local/lib/ruby/gems/1.8/gems/right_http_connection-1.2.4/lib/net_fix.rb:85:in `exec'
+  /usr/local/lib/ruby/gems/1.8/gems/right_http_connection-1.2.4/lib/net_fix.rb:144:in `request'
+  /usr/local/lib/ruby/gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/connection.rb:45:in `request'
+  /usr/local/lib/ruby/1.8/net/http.rb:543:in `start'
+  /usr/local/lib/ruby/gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/connection.rb:52:in `request'
+  /usr/local/lib/ruby/gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/base.rb:69:in `request'
+  /usr/local/lib/ruby/gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/base.rb:88:in `put'
+  /usr/local/lib/ruby/gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/object.rb:241:in `store'
+  app/controllers/dads_controller.rb:8:in `create'
+  haml (3.0.12) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (171.1ms)
+Rendered rescues/_request_and_response (2.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DadsController#create (for 127.0.0.1 at 2010-06-17 11:24:09) [POST]
+  Parameters: {"commit"=>"Add Dad", "authenticity_token"=>"Amq/YyeJOV/8OoWC5Nt1gCdEJ4q2ZP2cXECZCSk/V/U=", "dad"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart20100617-3927-s1du1m-0>, "name"=>"Other Dad", "description"=>"Chicken"}}
+  [4;36;1mDad Create (0.4ms)[0m   [0;1mINSERT INTO "dads" ("name", "created_at", "photo_file_size", "updated_at", "photo_file_name", "photo_content_type", "photo_updated_at", "description") VALUES('Other Dad', '2010-06-17 15:24:09', 32768, '2010-06-17 15:24:09', 'trex.jpg', 'image/jpeg', '2010-06-17 15:24:09', 'Chicken')[0m
+[paperclip] Saving attachments.
+[paperclip] saving photos/4/original/trex.jpg
+
+ArgumentError (wrong number of arguments (5 for 4)):
+  /usr/local/lib/ruby/gems/1.8/gems/right_http_connection-1.2.4/lib/net_fix.rb:85:in `send_request_with_body_stream'
+  /usr/local/lib/ruby/gems/1.8/gems/right_http_connection-1.2.4/lib/net_fix.rb:85:in `exec'
+  /usr/local/lib/ruby/gems/1.8/gems/right_http_connection-1.2.4/lib/net_fix.rb:144:in `request'
+  /usr/local/lib/ruby/gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/connection.rb:45:in `request'
+  /usr/local/lib/ruby/1.8/net/http.rb:543:in `start'
+  /usr/local/lib/ruby/gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/connection.rb:52:in `request'
+  /usr/local/lib/ruby/gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/base.rb:69:in `request'
+  /usr/local/lib/ruby/gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/base.rb:88:in `put'
+  /usr/local/lib/ruby/gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/object.rb:241:in `store'
+  app/controllers/dads_controller.rb:8:in `create'
+  haml (3.0.12) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (92.3ms)
+Rendered rescues/_request_and_response (2.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-17 11:27:43) [GET]
+  [4;36;1mDad Load (0.7ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering public/home
+Completed in 1081ms (View: 1001, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 11:27:44) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  haml (3.0.12) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing DadsController#new (for 127.0.0.1 at 2010-06-17 11:27:52) [GET]
+Rendering template within layouts/application
+Rendering dads/new
+Completed in 55ms (View: 41, DB: 0) | 200 OK [http://localhost/dads/new]
+
+
+Processing DadsController#create (for 127.0.0.1 at 2010-06-17 11:28:11) [POST]
+  Parameters: {"commit"=>"Add Dad", "authenticity_token"=>"Amq/YyeJOV/8OoWC5Nt1gCdEJ4q2ZP2cXECZCSk/V/U=", "dad"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart20100617-3958-ybadpj-0>, "name"=>"Other Dad", "description"=>"MMA"}}
+  [4;35;1mDad Create (0.4ms)[0m   [0mINSERT INTO "dads" ("name", "created_at", "photo_file_size", "updated_at", "photo_file_name", "photo_content_type", "photo_updated_at", "description") VALUES('Other Dad', '2010-06-17 15:28:11', 32768, '2010-06-17 15:28:11', 'trex.jpg', 'image/jpeg', '2010-06-17 15:28:11', 'MMA')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/michael/Desktop/daddy/public/system/photos/4/original/trex.jpg
+Redirected to http://localhost:3000/
+Completed in 67ms (DB: 0) | 302 Found [http://localhost/dads]
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-17 11:28:11) [GET]
+  [4;36;1mDad Load (0.7ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering public/home
+Completed in 1159ms (View: 1144, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 11:28:12) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  haml (3.0.12) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-17 11:30:22) [GET]
   [4;36;1mDad Load (0.8ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
 Rendering public/home
-Completed in 744ms (View: 737, DB: 1) | 200 OK [http://localhost/]
+Completed in 2957ms (View: 2944, DB: 1) | 200 OK [http://localhost/]
 
 
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:19:01) [GET]
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 11:30:25) [GET]
 
 ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
+  haml (3.0.12) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
 
 Rendering rescues/layout (not_found)
 
 
-Processing DadsController#show (for 127.0.0.1 at 2010-06-16 15:19:57) [GET]
-  Parameters: {"id"=>"1"}
-  [4;35;1mDad Load (0.2ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
+Processing DadsController#new (for 127.0.0.1 at 2010-06-17 11:30:28) [GET]
+Rendering template within layouts/application
+Rendering dads/new
+Completed in 53ms (View: 39, DB: 0) | 200 OK [http://localhost/dads/new]
+
+
+Processing DadsController#create (for 127.0.0.1 at 2010-06-17 11:30:38) [POST]
+  Parameters: {"commit"=>"Add Dad", "authenticity_token"=>"Amq/YyeJOV/8OoWC5Nt1gCdEJ4q2ZP2cXECZCSk/V/U=", "dad"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart20100617-3964-1a12yvt-0>, "name"=>"My Dad", "description"=>"Whatever"}}
+[paperclip] identify '-format' '%wx%h' '/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/stream,3964,0.png[0]' 2>/dev/null
+[paperclip] convert '/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/stream,3964,0.png[0]' '-resize' 'x50' '-crop' '50x50+26+0' '+repage' '/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/stream,3964,0,3964,0' 2>/dev/null
+  [4;35;1mDad Create (0.4ms)[0m   [0mINSERT INTO "dads" ("name", "created_at", "photo_file_size", "updated_at", "photo_file_name", "photo_content_type", "photo_updated_at", "description") VALUES('My Dad', '2010-06-17 15:30:38', 62040, '2010-06-17 15:30:38', 'sig.png', 'image/png', '2010-06-17 15:30:38', 'Whatever')[0m
+[paperclip] Saving attachments.
+[paperclip] saving photos/5/thumb/sig.png
+
+ArgumentError (wrong number of arguments (5 for 4)):
+  /usr/local/lib/ruby/gems/1.8/gems/right_http_connection-1.2.4/lib/net_fix.rb:85:in `send_request_with_body_stream'
+  /usr/local/lib/ruby/gems/1.8/gems/right_http_connection-1.2.4/lib/net_fix.rb:85:in `exec'
+  /usr/local/lib/ruby/gems/1.8/gems/right_http_connection-1.2.4/lib/net_fix.rb:144:in `request'
+  /usr/local/lib/ruby/gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/connection.rb:45:in `request'
+  /usr/local/lib/ruby/1.8/net/http.rb:543:in `start'
+  /usr/local/lib/ruby/gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/connection.rb:52:in `request'
+  /usr/local/lib/ruby/gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/base.rb:69:in `request'
+  /usr/local/lib/ruby/gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/base.rb:88:in `put'
+  /usr/local/lib/ruby/gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/object.rb:241:in `store'
+  app/controllers/dads_controller.rb:8:in `create'
+  haml (3.0.12) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (100.3ms)
+Rendered rescues/_request_and_response (2.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DadsController#new (for 127.0.0.1 at 2010-06-17 13:23:40) [GET]
+Rendering template within layouts/application
+Rendering dads/new
+Completed in 62ms (View: 49, DB: 0) | 200 OK [http://localhost/dads/new]
+
+
+Processing DadsController#create (for 127.0.0.1 at 2010-06-17 13:23:51) [POST]
+  Parameters: {"commit"=>"Add Dad", "authenticity_token"=>"Amq/YyeJOV/8OoWC5Nt1gCdEJ4q2ZP2cXECZCSk/V/U=", "dad"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart20100617-4050-1uzm3mb-0>, "name"=>"New Dad", "description"=>"Wormhole"}}
+[paperclip] identify '-format' '%wx%h' '/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/stream,4050,0.jpg[0]' 2>/dev/null
+[paperclip] convert '/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/stream,4050,0.jpg[0]' '-resize' 'x50' '-crop' '50x50+2+0' '+repage' '/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/stream,4050,0,4050,0' 2>/dev/null
+  [4;36;1mDad Create (0.4ms)[0m   [0;1mINSERT INTO "dads" ("name", "created_at", "photo_file_size", "updated_at", "photo_file_name", "photo_content_type", "photo_updated_at", "description") VALUES('New Dad', '2010-06-17 17:23:52', 32768, '2010-06-17 17:23:52', 'trex.jpg', 'image/jpeg', '2010-06-17 17:23:52', 'Wormhole')[0m
+[paperclip] Saving attachments.
+[paperclip] saving photos/5/thumb/trex.jpg
+[paperclip] saving photos/5/original/trex.jpg
+Redirected to http://localhost:3000/
+Completed in 1484ms (DB: 0) | 302 Found [http://localhost/dads]
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-17 13:23:53) [GET]
+  [4;35;1mDad Load (0.8ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering public/home
+Completed in 1254ms (View: 1240, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 13:23:54) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  haml (3.0.12) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-17 15:41:30) [GET]
+  [4;36;1mDad Load (0.7ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering public/home
+Completed in 1187ms (View: 1174, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 15:41:31) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  haml (3.0.12) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-17 16:10:41) [GET]
+  [4;35;1mDad Load (0.8ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering public/home
+Completed in 3233ms (View: 3219, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-17 16:10:44) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  haml (3.0.12) rails/./lib/sass/plugin/rack.rb:41:in `call'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-17 16:10:58) [GET]
+  [4;36;1mDad Load (0.7ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering public/home
+Completed in 1153ms (View: 1140, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-17 16:11:54) [GET]
+  [4;35;1mDad Load (0.7ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering public/home
+Completed in 1280ms (View: 1267, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing DadsController#show (for 127.0.0.1 at 2010-06-17 16:11:57) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mDad Load (0.2ms)[0m   [0;1mSELECT * FROM "dads" WHERE ("dads"."id" = 3) [0m
+Rendering template within layouts/application
 Rendering dads/show
 ERROR: compiling _run_haml_app47views47dads47show46html46haml RAISED compile error
-/Users/robert/Desktop/daddy/app/views/dads/show.html.haml:5: unknown regexp option - h
-/Users/robert/Desktop/daddy/app/views/dads/show.html.haml:5: unmatched ): /h1>
-_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n", 0, false);
-
-_hamlout.push_text("</
-/Users/robert/Desktop/daddy/app/views/dads/show.html.haml:5: syntax error, unexpected tINTEGER, expecting '}'
-_hamlout.push_text("</h1>\n<p>\n  #{haml_temp =  image...
-                        ^
-/Users/robert/Desktop/daddy/app/views/dads/show.html.haml:5: syntax error, unexpected $undefined
-...hamlout.push_text("</h1>\n<p>\n  #{haml_temp =  image_tag @d...
+/Users/michael/Desktop/daddy/app/views/dads/show.html.haml:6: syntax error, unexpected ',', expecting ')'
+...alse(( image_tag("rails.png"), dad_path(@dad)
+                              ^
+/Users/michael/Desktop/daddy/app/views/dads/show.html.haml:8: syntax error, unexpected ',', expecting ')'
+...e(( image_tag(@dad.photo.url), dad_path(@dad)
                               ^
 Function body:           def _run_haml_app47views47dads47show46html46haml(local_assigns)
-            old_output_buffer = output_buffer;;begin;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:attr_wrapper=>"'", :preserve=>["textarea", "pre", "code"], :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :format=>:xhtml, :encoding=>nil, :ugly=>false, :escape_html=>false});_erbout = _hamlout.buffer;__in_erb_template = true;;
-_hamlout.push_text("<h1>\n  #{_hamlout.adjust_tabs(1); haml_temp =  @dad.name </h1>
-_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n", 0, false);
+            old_output_buffer = output_buffer;;begin;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:preserve=>["textarea", "pre", "code"], :format=>:xhtml, :attr_wrapper=>"'", :encoding=>nil, :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :escape_html=>false, :ugly=>false});_erbout = _hamlout.buffer;__in_erb_template = true;;_hamlout.push_text("<h1>\n  #{
+_hamlout.adjust_tabs(1); _hamlout.format_script_false_false_false_false_false_true_false(( @dad.name
+));}\n</h1>\n<p>\n", 0, false);
 
-_hamlout.push_text("</h1>\n<p>\n  #{haml_temp =  image_tag @dad.photo.url
-_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n", 0, false);
+ if @dad.photo.size.blank?;
+_hamlout.push_text("  #{_hamlout.format_script_false_false_false_false_false_true_false(( image_tag("rails.png"), dad_path(@dad)
+));}\n", 0, false); else;
+_hamlout.push_text("  #{_hamlout.format_script_false_false_false_false_false_true_false(( image_tag(@dad.photo.url), dad_path(@dad)
+));}\n", 0, false);
+
+end;_hamlout.push_text("</p>\n<p>\n  #{
+_hamlout.format_script_false_false_false_false_false_true_false(( @dad.description
+));}\n</p>\n<p>\n  #{
 
 
-_hamlout.push_text("</p>\n<p>\n  #{haml_temp =  @dad.description
-_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n", 0, false);
+_hamlout.format_script_false_false_false_false_false_true_false(( twitter_share(dad_url(@dad))
+));}\n</p>\n<p>\n  #{
 
 
-_hamlout.push_text("</p>\n<p>\n  #{haml_temp =  twitter_share(dad_url(@dad))
-_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n", 0, false);
+_hamlout.format_script_false_false_false_false_false_true_false(( facebook_share(dad_url(@dad))
+));}\n</p>\n#{
 
-
-_hamlout.push_text("</p>\n<p>\n  #{haml_temp =  facebook_share(dad_url(@dad))
-_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n", 0, false);
-
-_hamlout.push_text("</p>\n#{_hamlout.adjust_tabs(-1); haml_temp =  link_to "Back", root_path
-_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n", 0, false);_erbout;ensure;@haml_buffer = @haml_buffer.upper;end;
+_hamlout.adjust_tabs(-1); _hamlout.format_script_false_false_false_false_false_true_false(( link_to "Back", root_path
+));}\n", 0, false);_erbout;ensure;@haml_buffer = @haml_buffer.upper;end;
           ensure
             self.output_buffer = old_output_buffer
           end
-Backtrace: /Users/robert/Desktop/daddy/app/views/dads/show.html.haml:24:in `compile!'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:61:in `compile'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:28:in `render'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/template.rb:205:in `render_template'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:265:in `render_without_haml'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.17/lib/haml/helpers/action_view_mods.rb:13:in `render'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1250:in `render_for_file'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:936:in `render_without_benchmark'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
-/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
-/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1326:in `default_render'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
-/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
-/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `sass_old_process'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.17/rails/../lib/sass/plugin/rails.rb:19:in `process'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:391:in `process'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:386:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/routing/route_set.rb:438:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:87:in `dispatch'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
-/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
-/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
-/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
-/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
-/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
-/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
-/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
-/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/chunked.rb:15:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:67:in `process'
-/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
-/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
-/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
-/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
-/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
-/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
-/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
-/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
-/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
-/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
-/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:38:in `run'
-/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/commands/server.rb:111
-/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
-/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+Backtrace: /Users/michael/Desktop/daddy/app/views/dads/show.html.haml:27:in `compile!'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render_without_haml'
+/usr/local/lib/ruby/gems/1.8/gems/haml-3.0.12/rails/../lib/haml/helpers/action_view_mods.rb:13:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render_without_haml'
+/usr/local/lib/ruby/gems/1.8/gems/haml-3.0.12/rails/../lib/haml/helpers/action_view_mods.rb:13:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/haml-3.0.12/rails/../lib/sass/plugin/rack.rb:41:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
 script/server:3
 
 ActionView::TemplateError (compile error
-/Users/robert/Desktop/daddy/app/views/dads/show.html.haml:5: unknown regexp option - h
-/Users/robert/Desktop/daddy/app/views/dads/show.html.haml:5: unmatched ): /h1>
-_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n", 0, false);
-
-_hamlout.push_text("</
-/Users/robert/Desktop/daddy/app/views/dads/show.html.haml:5: syntax error, unexpected tINTEGER, expecting '}'
-_hamlout.push_text("</h1>\n<p>\n  #{haml_temp =  image...
-                        ^
-/Users/robert/Desktop/daddy/app/views/dads/show.html.haml:5: syntax error, unexpected $undefined
-...hamlout.push_text("</h1>\n<p>\n  #{haml_temp =  image_tag @d...
-                              ^) on line #5 of app/views/dads/show.html.haml:
-2:   = @dad.name </h1>
+/Users/michael/Desktop/daddy/app/views/dads/show.html.haml:6: syntax error, unexpected ',', expecting ')'
+...alse(( image_tag("rails.png"), dad_path(@dad)
+                              ^
+/Users/michael/Desktop/daddy/app/views/dads/show.html.haml:8: syntax error, unexpected ',', expecting ')'
+...e(( image_tag(@dad.photo.url), dad_path(@dad)
+                              ^) on line #6 of app/views/dads/show.html.haml:
 3: 
 4: %p
-5:   = image_tag @dad.photo.url 
-6:   
-7: 
-8: %p
+5:   - if @dad.photo.size.blank?
+6:     = image_tag("rails.png"), dad_path(@dad)
+7:   - else
+8:     = image_tag(@dad.photo.url), dad_path(@dad)
+9:   
 
-    app/views/dads/show.html.haml:24:in `compile!'
-    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
-    haml (2.2.17) rails/./lib/sass/plugin/rails.rb:19:in `process'
+    app/views/dads/show.html.haml:27:in `compile!'
+    haml (3.0.12) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.12) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.12) rails/./lib/sass/plugin/rack.rb:41:in `call'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
 
-Rendered rescues/_trace (27.2ms)
-Rendered rescues/_request_and_response (0.2ms)
+Rendered rescues/_trace (70.0ms)
+Rendered rescues/_request_and_response (2.4ms)
 Rendering rescues/layout (internal_server_error)
 
 
-Processing DadsController#show (for 127.0.0.1 at 2010-06-16 15:20:12) [GET]
-  Parameters: {"id"=>"1"}
-  [4;36;1mDad Load (0.2ms)[0m   [0;1mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
-Rendering dads/show
-Completed in 311ms (View: 304, DB: 0) | 200 OK [http://localhost/dads/1]
-
-
-Processing DadsController#show (for 127.0.0.1 at 2010-06-16 15:20:25) [GET]
-  Parameters: {"id"=>"1"}
-  [4;35;1mDad Load (0.2ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
-Rendering dads/show
-Completed in 264ms (View: 258, DB: 0) | 200 OK [http://localhost/dads/1]
-
-
-Processing DadsController#show (for 127.0.0.1 at 2010-06-16 15:20:29) [GET]
-  Parameters: {"id"=>"1"}
-  [4;36;1mDad Load (0.2ms)[0m   [0;1mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
-Rendering dads/show
-Completed in 244ms (View: 237, DB: 0) | 200 OK [http://localhost/dads/1]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:21:27) [GET]
-  [4;35;1mDad Load (0.8ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering public/home
-Completed in 740ms (View: 733, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:21:27) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing DadsController#show (for 127.0.0.1 at 2010-06-16 15:21:30) [GET]
-  Parameters: {"id"=>"2"}
-  [4;36;1mDad Load (0.2ms)[0m   [0;1mSELECT * FROM "dads" WHERE ("dads"."id" = 2) [0m
-Rendering dads/show
-Completed in 229ms (View: 223, DB: 0) | 200 OK [http://localhost/dads/2]
-
-
-Processing DadsController#show (for 127.0.0.1 at 2010-06-16 15:26:56) [GET]
+Processing DadsController#show (for 127.0.0.1 at 2010-06-17 16:12:09) [GET]
   Parameters: {"id"=>"3"}
-  [4;35;1mDad Load (0.3ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 3) [0m
-Rendering dads/show
-Completed in 215ms (View: 209, DB: 0) | 200 OK [http://localhost/dads/3]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:26:56) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 15:29:43) [GET]
-Rendering dads/new
-Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#create (for 127.0.0.1 at 2010-06-16 15:30:22) [POST]
-  Parameters: {"commit"=>"Save", "authenticity_token"=>"IBjhyh/ZimzaKoWKVoC8UmqOD1Fh/wxy1byTfYxAyzE=", "dad"=>{"photo"=>#<File:/var/folders/Wv/WvbFbKE-FFybn7rj-3QLkE+++TI/-Tmp-/RackMultipart.77631.0>, "name"=>"test", "description"=>"My dad does everything everyone could ever do ever ever ever ever ever."}}
-  [4;36;1mDad Create (0.3ms)[0m   [0;1mINSERT INTO "dads" ("name", "updated_at", "photo_file_name", "photo_file_size", "photo_updated_at", "description", "photo_content_type", "created_at") VALUES('test', '2010-06-16 19:30:22', '359px-Arnold_Schwarzenegger_2003.jpg', 31129, '2010-06-16 19:30:22', 'My dad does everything everyone could ever do ever ever ever ever ever.', 'image/jpeg', '2010-06-16 19:30:22')[0m
-[paperclip] Saving attachments.
-[paperclip] saving photos/4/original/359px-Arnold_Schwarzenegger_2003.jpg
-
-ArgumentError (wrong number of arguments (5 for 4)):
-  /Library/Ruby/Gems/1.8/gems/right_http_connection-1.2.4/lib/net_fix.rb:85:in `send_request_with_body_stream'
-  /Library/Ruby/Gems/1.8/gems/right_http_connection-1.2.4/lib/net_fix.rb:85:in `exec'
-  /Library/Ruby/Gems/1.8/gems/right_http_connection-1.2.4/lib/net_fix.rb:144:in `request'
-  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/connection.rb:45:in `request'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:543:in `start'
-  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/connection.rb:52:in `request'
-  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/base.rb:69:in `request'
-  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/base.rb:88:in `put'
-  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/object.rb:241:in `store'
-  paperclip (2.3.1.1) lib/paperclip/storage.rb:202:in `flush_writes'
-  paperclip (2.3.1.1) lib/paperclip/storage.rb:199:in `each'
-  paperclip (2.3.1.1) lib/paperclip/storage.rb:199:in `flush_writes'
-  paperclip (2.3.1.1) lib/paperclip/attachment.rb:142:in `save'
-  paperclip (2.3.1.1) lib/paperclip.rb:334:in `send'
-  paperclip (2.3.1.1) lib/paperclip.rb:334:in `save_attached_files'
-  paperclip (2.3.1.1) lib/paperclip.rb:327:in `each_attachment'
-  paperclip (2.3.1.1) lib/paperclip.rb:326:in `each'
-  paperclip (2.3.1.1) lib/paperclip.rb:326:in `each_attachment'
-  paperclip (2.3.1.1) lib/paperclip.rb:333:in `save_attached_files'
-  app/controllers/dads_controller.rb:8:in `create'
-  haml (2.2.17) rails/./lib/sass/plugin/rails.rb:19:in `process'
-
-Rendered rescues/_trace (42.0ms)
-Rendered rescues/_request_and_response (0.3ms)
-Rendering rescues/layout (internal_server_error)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:36:37) [GET]
-  [4;36;1mDad Load (0.7ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 1201ms (View: 1196, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:36:49) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 665ms (View: 659, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:37:04) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 705ms (View: 700, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:37:05) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:41:30) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 739ms (View: 735, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:41:31) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:42:47) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 718ms (View: 713, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:42:47) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:44:18) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 655ms (View: 646, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:44:19) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:44:27) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 724ms (View: 719, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:44:28) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:45:44) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 731ms (View: 726, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:45:45) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:46:22) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 817ms (View: 810, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:46:23) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:48:46) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 735ms (View: 729, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:48:46) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:49:31) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 802ms (View: 794, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:49:32) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:50:46) [GET]
-  [4;35;1mDad Load (0.7ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 725ms (View: 719, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:50:47) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:50:56) [GET]
-  [4;36;1mDad Load (2.5ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 760ms (View: 753, DB: 2) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:50:57) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:51:28) [GET]
-  [4;35;1mDad Load (0.7ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 688ms (View: 681, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:51:28) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:53:38) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 900ms (View: 894, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:53:39) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:54:15) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 697ms (View: 685, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:54:16) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:54:18) [GET]
-  [4;36;1mDad Load (0.5ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 787ms (View: 782, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:54:18) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 15:57:08) [GET]
-  [4;35;1mDad Load (0.9ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 660ms (View: 651, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 15:57:08) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:02:46) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 641ms (View: 636, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:02:47) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:03:00) [GET]
-  [4;35;1mDad Load (0.7ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 674ms (View: 669, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:03:01) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:03:26) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 722ms (View: 717, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:03:27) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:03:45) [GET]
-  [4;35;1mDad Load (0.5ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 658ms (View: 653, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:03:45) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:04:02) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 725ms (View: 720, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:04:03) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:04:12) [GET]
-  [4;35;1mDad Load (0.5ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 679ms (View: 674, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:04:12) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:04:33) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 661ms (View: 655, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:04:34) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:04:51) [GET]
-  [4;35;1mDad Load (0.5ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 680ms (View: 675, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:04:51) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:05:52) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 826ms (View: 822, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:05:53) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:06:14) [GET]
-  [4;35;1mDad Load (0.8ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 674ms (View: 667, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:06:15) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:07:19) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 683ms (View: 678, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:07:19) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:07:29) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 661ms (View: 656, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:07:29) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:08:10) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 651ms (View: 646, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:08:11) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:08:23) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 755ms (View: 685, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:08:24) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:09:06) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 765ms (View: 760, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:09:07) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:09:18) [GET]
-  [4;35;1mDad Load (0.7ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 698ms (View: 691, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:09:19) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:09:35) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 779ms (View: 773, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:09:36) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:10:01) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 685ms (View: 680, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:10:02) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:10:25) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 678ms (View: 673, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:10:26) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:10:26) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 691ms (View: 686, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:10:27) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:12:00) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 641ms (View: 634, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:12:01) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:12:02) [GET]
-  [4;35;1mDad Load (1.0ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 743ms (View: 736, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:12:03) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:12:04) [GET]
-  [4;36;1mDad Load (0.7ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 640ms (View: 634, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:12:04) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:12:05) [GET]
-  [4;35;1mDad Load (0.8ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 625ms (View: 618, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:12:06) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:12:50) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 735ms (View: 730, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:12:51) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:13:05) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 657ms (View: 652, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:13:06) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:13:09) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 637ms (View: 632, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:13:10) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:13:39) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 686ms (View: 680, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:13:40) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:14:01) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 684ms (View: 679, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:14:02) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:17:05) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 724ms (View: 719, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:17:05) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:17:08) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 649ms (View: 644, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:17:09) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:17:52) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 637ms (View: 633, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:17:52) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:18:02) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 748ms (View: 743, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:18:03) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:18:10) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 634ms (View: 629, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:18:11) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:18:37) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 723ms (View: 718, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:18:38) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:18:56) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 662ms (View: 658, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:18:57) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:19:46) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 697ms (View: 692, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:19:46) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:20:05) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 684ms (View: 679, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:20:05) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:20:05) [GET]
-
-ActionController::RoutingError (No route matches "/images/logos/logo.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:20:30) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 665ms (View: 660, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:20:31) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:21:03) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 665ms (View: 659, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:21:04) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:21:15) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 652ms (View: 647, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:21:16) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:21:27) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 702ms (View: 697, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:21:28) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:21:35) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 684ms (View: 680, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:21:36) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:22:01) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 675ms (View: 670, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:22:02) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:22:06) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 727ms (View: 722, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:22:07) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:22:22) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 692ms (View: 687, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:22:23) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:22:35) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 733ms (View: 728, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:22:36) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:22:53) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 651ms (View: 646, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:22:54) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:23:03) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 672ms (View: 667, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:23:04) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:23:47) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 719ms (View: 714, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:23:48) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:24:32) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 737ms (View: 731, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:24:33) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:24:34) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 699ms (View: 694, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:24:35) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:24:41) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 728ms (View: 723, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:24:42) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:24:54) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 19ms (View: 11, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:25:22) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:27:27) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:27:28) [GET]
-
-ActionController::RoutingError (No route matches "/images/aaarnold.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:27:35) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:27:35) [GET]
-
-ActionController::RoutingError (No route matches "/stylesheets/images/aaarnold.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:28:09) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:28:09) [GET]
-
-ActionController::RoutingError (No route matches "/images/aaarnold.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:28:50) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:29:07) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:29:14) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:29:28) [GET]
-  [4;35;1mDad Load (0.8ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 742ms (View: 735, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:29:29) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:29:37) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 673ms (View: 668, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:29:38) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:30:56) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 81ms (View: 74, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:31:20) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:31:36) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 16ms (View: 9, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:32:09) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:34:01) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:34:06) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 68ms (View: 63, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:34:56) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 70ms (View: 9, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:36:13) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 19ms (View: 14, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:37:08) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 23ms (View: 15, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:37:38) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:37:54) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 72ms (View: 67, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:38:42) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:38:55) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:38:59) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:39:26) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:39:53) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:40:07) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:40:15) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:40:17) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:40:17) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:40:18) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:40:49) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:40:51) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:41:11) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:41:19) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:41:25) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:41:29) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:41:45) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:42:00) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:42:37) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 705ms (View: 700, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:42:38) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing DadsController#show (for 127.0.0.1 at 2010-06-16 16:42:52) [GET]
-  Parameters: {"id"=>"1"}
-  [4;36;1mDad Load (0.2ms)[0m   [0;1mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
+  [4;35;1mDad Load (0.2ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 3) [0m
 Rendering template within layouts/application
 Rendering dads/show
-Completed in 216ms (View: 210, DB: 0) | 200 OK [http://localhost/dads/1]
+Completed in 692ms (View: 678, DB: 0) | 200 OK [http://localhost/dads/3]
 
 
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:43:01) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 675ms (View: 670, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:43:02) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:43:03) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:43:17) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:43:21) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:43:38) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 71ms (View: 8, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:43:44) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 15ms (View: 8, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:43:48) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 666ms (View: 661, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:43:49) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:45:46) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 671ms (View: 666, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:45:47) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:45:50) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:46:13) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 672ms (View: 667, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:46:14) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:46:21) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 662ms (View: 657, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:46:22) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 16:47:29) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 16:47:50) [GET]
-  [4;36;1mDad Load (57.0ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 898ms (View: 837, DB: 57) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 16:47:51) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:08:50) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 667ms (View: 662, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:08:51) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:35:37) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 780ms (View: 775, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:35:37) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:37:18) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 750ms (View: 745, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:37:19) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:37:51) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 688ms (View: 683, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:37:52) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:38:37) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 648ms (View: 643, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:38:37) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:38:47) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 649ms (View: 644, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:38:47) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:38:59) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 712ms (View: 707, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:38:59) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:39:39) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 780ms (View: 712, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:39:39) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 17:40:02) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#create (for 127.0.0.1 at 2010-06-16 17:40:17) [POST]
-  Parameters: {"commit"=>"Add Dad", "authenticity_token"=>"bQrl/lPOtwzcil7RhkoGTjKySd7zQ+7GuhFLzTGOtvw=", "dad"=>{"photo"=>#<File:/var/folders/Wv/WvbFbKE-FFybn7rj-3QLkE+++TI/-Tmp-/RackMultipart.88708.0>, "name"=>"etasd", "description"=>"asdfasdf"}}
-  [4;35;1mDad Create (0.5ms)[0m   [0mINSERT INTO "dads" ("name", "updated_at", "photo_file_name", "photo_file_size", "photo_updated_at", "description", "photo_content_type", "created_at") VALUES('etasd', '2010-06-16 21:40:17', '25307_358730398336_740023336_3552540_8149324_n.jpg', 33629, '2010-06-16 21:40:17', 'asdfasdf', 'image/jpeg', '2010-06-16 21:40:17')[0m
-[paperclip] Saving attachments.
-[paperclip] saving photos/4/original/25307_358730398336_740023336_3552540_8149324_n.jpg
-
-ArgumentError (wrong number of arguments (5 for 4)):
-  /Library/Ruby/Gems/1.8/gems/right_http_connection-1.2.4/lib/net_fix.rb:85:in `send_request_with_body_stream'
-  /Library/Ruby/Gems/1.8/gems/right_http_connection-1.2.4/lib/net_fix.rb:85:in `exec'
-  /Library/Ruby/Gems/1.8/gems/right_http_connection-1.2.4/lib/net_fix.rb:144:in `request'
-  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/connection.rb:45:in `request'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:543:in `start'
-  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/connection.rb:52:in `request'
-  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/base.rb:69:in `request'
-  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/base.rb:88:in `put'
-  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/object.rb:241:in `store'
-  paperclip (2.3.1.1) lib/paperclip/storage.rb:202:in `flush_writes'
-  paperclip (2.3.1.1) lib/paperclip/storage.rb:199:in `each'
-  paperclip (2.3.1.1) lib/paperclip/storage.rb:199:in `flush_writes'
-  paperclip (2.3.1.1) lib/paperclip/attachment.rb:142:in `save'
-  paperclip (2.3.1.1) lib/paperclip.rb:334:in `send'
-  paperclip (2.3.1.1) lib/paperclip.rb:334:in `save_attached_files'
-  paperclip (2.3.1.1) lib/paperclip.rb:327:in `each_attachment'
-  paperclip (2.3.1.1) lib/paperclip.rb:326:in `each'
-  paperclip (2.3.1.1) lib/paperclip.rb:326:in `each_attachment'
-  paperclip (2.3.1.1) lib/paperclip.rb:333:in `save_attached_files'
-  app/controllers/dads_controller.rb:8:in `create'
-  haml (2.2.17) rails/./lib/sass/plugin/rails.rb:19:in `process'
-
-Rendered rescues/_trace (54.2ms)
-Rendered rescues/_request_and_response (2.1ms)
-Rendering rescues/layout (internal_server_error)
-  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
-Migrating to CreateDads (20100616173359)
-Migrating to AddAttachmentsPhotoToDad (20100616174516)
-  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
-  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
-  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("dads")[0m
-
-
-Processing DadsController#create (for 127.0.0.1 at 2010-06-16 17:41:18) [POST]
-  Parameters: {"commit"=>"Add Dad", "authenticity_token"=>"bQrl/lPOtwzcil7RhkoGTjKySd7zQ+7GuhFLzTGOtvw=", "dad"=>{"photo"=>#<File:/var/folders/Wv/WvbFbKE-FFybn7rj-3QLkE+++TI/-Tmp-/RackMultipart.88708.1>, "name"=>"etasd", "description"=>"asdfasdf"}}
-  [4;36;1mDad Create (0.3ms)[0m   [0;1mINSERT INTO "dads" ("name", "updated_at", "photo_file_name", "photo_file_size", "photo_updated_at", "description", "photo_content_type", "created_at") VALUES('etasd', '2010-06-16 21:41:18', '25307_358730398336_740023336_3552540_8149324_n.jpg', 33629, '2010-06-16 21:41:18', 'asdfasdf', 'image/jpeg', '2010-06-16 21:41:18')[0m
-[paperclip] Saving attachments.
-[paperclip] saving photos/4/original/25307_358730398336_740023336_3552540_8149324_n.jpg
-
-ArgumentError (wrong number of arguments (5 for 4)):
-  /Library/Ruby/Gems/1.8/gems/right_http_connection-1.2.4/lib/net_fix.rb:85:in `send_request_with_body_stream'
-  /Library/Ruby/Gems/1.8/gems/right_http_connection-1.2.4/lib/net_fix.rb:85:in `exec'
-  /Library/Ruby/Gems/1.8/gems/right_http_connection-1.2.4/lib/net_fix.rb:144:in `request'
-  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/connection.rb:45:in `request'
-  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:543:in `start'
-  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/connection.rb:52:in `request'
-  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/base.rb:69:in `request'
-  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/base.rb:88:in `put'
-  /Library/Ruby/Gems/1.8/gems/aws-s3-0.6.2/lib/aws/s3/object.rb:241:in `store'
-  paperclip (2.3.1.1) lib/paperclip/storage.rb:202:in `flush_writes'
-  paperclip (2.3.1.1) lib/paperclip/storage.rb:199:in `each'
-  paperclip (2.3.1.1) lib/paperclip/storage.rb:199:in `flush_writes'
-  paperclip (2.3.1.1) lib/paperclip/attachment.rb:142:in `save'
-  paperclip (2.3.1.1) lib/paperclip.rb:334:in `send'
-  paperclip (2.3.1.1) lib/paperclip.rb:334:in `save_attached_files'
-  paperclip (2.3.1.1) lib/paperclip.rb:327:in `each_attachment'
-  paperclip (2.3.1.1) lib/paperclip.rb:326:in `each'
-  paperclip (2.3.1.1) lib/paperclip.rb:326:in `each_attachment'
-  paperclip (2.3.1.1) lib/paperclip.rb:333:in `save_attached_files'
-  app/controllers/dads_controller.rb:8:in `create'
-  haml (2.2.17) rails/./lib/sass/plugin/rails.rb:19:in `process'
-
-Rendered rescues/_trace (37.6ms)
-Rendered rescues/_request_and_response (0.3ms)
-Rendering rescues/layout (internal_server_error)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:41:57) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 680ms (View: 674, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:41:58) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:42:14) [GET]
-  [4;36;1mDad Load (0.5ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 737ms (View: 732, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:42:15) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:42:26) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 643ms (View: 638, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:42:27) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:43:04) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 644ms (View: 639, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:43:05) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:43:18) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 680ms (View: 675, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:43:18) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:43:33) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 680ms (View: 675, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:43:34) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:44:04) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 656ms (View: 651, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:44:05) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:47:45) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 709ms (View: 704, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:47:45) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:48:00) [GET]
-  [4;35;1mDad Load (0.5ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 673ms (View: 669, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:48:01) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:49:00) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 684ms (View: 679, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:49:01) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:49:12) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 656ms (View: 651, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:49:13) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:49:41) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 701ms (View: 696, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:49:41) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:49:43) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 702ms (View: 697, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:49:44) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:49:48) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 637ms (View: 632, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:49:49) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:50:20) [GET]
-  [4;35;1mDad Load (0.5ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 697ms (View: 692, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:50:21) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:50:43) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 690ms (View: 685, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:50:44) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:51:00) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 702ms (View: 697, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:51:01) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:56:01) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 801ms (View: 796, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:56:01) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:56:11) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 683ms (View: 678, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:56:11) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:56:27) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 669ms (View: 664, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:56:28) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:56:34) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 691ms (View: 686, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:56:35) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:56:43) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 694ms (View: 688, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:56:43) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:57:07) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 691ms (View: 687, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:57:07) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:58:00) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 707ms (View: 702, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:58:01) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:58:44) [GET]
-  [4;35;1mDad Load (0.9ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 652ms (View: 647, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:58:45) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:58:53) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 740ms (View: 735, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:58:54) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:59:01) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 664ms (View: 659, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:59:02) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:59:22) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 655ms (View: 650, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:59:22) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:59:43) [GET]
-  [4;35;1mDad Load (0.5ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 727ms (View: 722, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:59:44) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 17:59:53) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 687ms (View: 682, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 17:59:53) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:01:10) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 718ms (View: 713, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:01:10) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:09:29) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 727ms (View: 722, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:09:29) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:09:55) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 685ms (View: 681, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:09:55) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:10:01) [GET]
-  [4;36;1mDad Load (0.8ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 671ms (View: 664, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:10:02) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:10:07) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 762ms (View: 757, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:10:08) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:10:18) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 700ms (View: 695, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:10:19) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:11:04) [GET]
-  [4;35;1mDad Load (0.5ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 662ms (View: 657, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:11:05) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:11:14) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 652ms (View: 647, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:11:14) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:11:29) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 673ms (View: 668, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:11:29) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:11:52) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 693ms (View: 688, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:11:53) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:12:05) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 676ms (View: 672, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:12:06) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:12:19) [GET]
-  [4;36;1mDad Load (0.5ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 726ms (View: 721, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:12:20) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:12:36) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 791ms (View: 786, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:12:36) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:12:49) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 669ms (View: 664, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:12:50) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:14:29) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 686ms (View: 681, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:14:30) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:15:02) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 681ms (View: 676, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:15:03) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:15:16) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 744ms (View: 739, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:15:17) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:15:51) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 802ms (View: 797, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:15:52) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:16:47) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 924ms (View: 919, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:16:48) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:17:20) [GET]
-  [4;36;1mDad Load (0.8ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 706ms (View: 699, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:17:21) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:17:30) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 782ms (View: 777, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:17:31) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:22:38) [GET]
+Processing PublicController#home (for 127.0.0.1 at 2010-06-17 16:12:11) [GET]
   [4;36;1mDad Load (0.7ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
 Rendering template within layouts/application
 Rendering public/home
-Completed in 734ms (View: 727, DB: 1) | 200 OK [http://localhost/]
+Completed in 1394ms (View: 1381, DB: 1) | 200 OK [http://localhost/]
 
 
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:22:39) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:28:10) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Processing PublicController#home (for 127.0.0.1 at 2010-06-17 16:12:48) [GET]
+  [4;35;1mDad Load (0.8ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
 Rendering template within layouts/application
-Rendering public/home
-Completed in 651ms (View: 647, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:28:11) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:28:14) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 743ms (View: 738, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:28:15) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:29:08) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 713ms (View: 708, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:29:08) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:29:22) [GET]
-  [4;36;1mDad Load (0.6ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 651ms (View: 646, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:29:23) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing PublicController#home (for 127.0.0.1 at 2010-06-16 18:29:30) [GET]
-  [4;35;1mDad Load (0.6ms)[0m   [0mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
-Rendering template within layouts/application
-Rendering public/home
-Completed in 666ms (View: 661, DB: 1) | 200 OK [http://localhost/]
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2010-06-16 18:29:31) [GET]
-
-ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 18:29:57) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 88ms (View: 81, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 18:30:18) [GET]
-Rendering template within layouts/application
-Rendering dads/new
-Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/dads/new]
-
-
-Processing DadsController#new (for 127.0.0.1 at 2010-06-16 18:30:28) [GET]
-Rendering template within layouts/application
+<<<<<<< HEAD:log/development.log
 Rendering dads/new
 Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/dads/new]
 
@@ -3951,3 +888,85 @@ ActionController::RoutingError (No route matches "/photos/original/missing.png" 
   
 
 Rendering rescues/layout (not_found)
+
+
+Processing PublicController#home (for 127.0.0.1 at 2010-06-17 18:36:41) [GET]
+  [4;36;1mDad Load (0.7ms)[0m   [0;1mSELECT * FROM "dads" LIMIT 25 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering public/home
+Completed in 1999ms (View: 1994, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing DadsController#show (for 127.0.0.1 at 2010-06-17 18:36:52) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mDad Load (0.2ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering dads/show
+
+ActionView::TemplateError (undefined local variable or method `dad' for #<ActionView::Base:0x2337974>) on line #5 of app/views/dads/show.html.haml:
+2:   = @dad.name
+3: 
+4: %p
+5:   - if !dad.photo || @dad.photo.size.blank?
+6:     = image_tag("rails.png")
+7:   - else
+8:     = image_tag(@dad.photo.url)
+
+    app/views/dads/show.html.haml:5:in `_run_haml_app47views47dads47show46html46haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (85.0ms)
+Rendered rescues/_request_and_response (10.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DadsController#show (for 127.0.0.1 at 2010-06-17 18:36:57) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mDad Load (0.2ms)[0m   [0;1mSELECT * FROM "dads" WHERE ("dads"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering dads/show
+
+ActionView::TemplateError (undefined local variable or method `dad' for #<ActionView::Base:0x251a548>) on line #5 of app/views/dads/show.html.haml:
+2:   = @dad.name
+3: 
+4: %p
+5:   - if !dad.photo || @dad.photo.size.blank?
+6:     = image_tag("rails.png")
+7:   - else
+8:     = image_tag(@dad.photo.url)
+
+    app/views/dads/show.html.haml:5:in `_run_haml_app47views47dads47show46html46haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (28.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DadsController#show (for 127.0.0.1 at 2010-06-17 18:37:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDad Load (0.3ms)[0m   [0mSELECT * FROM "dads" WHERE ("dads"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering dads/show
+
+ActionView::TemplateError (undefined local variable or method `dad' for #<ActionView::Base:0x2310018>) on line #5 of app/views/dads/show.html.haml:
+2:   = @dad.name
+3: 
+4: %p
+5:   - if !dad.photo || @dad.photo.size.blank?
+6:     = image_tag("rails.png")
+7:   - else
+8:     = image_tag(@dad.photo.url)
+
+    app/views/dads/show.html.haml:5:in `_run_haml_app47views47dads47show46html46haml'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.17) rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (84.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
