@@ -4,4 +4,3 @@ log/*
 tmp/*
 public/system/*
 db/*.sqlite3
-
