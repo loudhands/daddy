@@ -3,7 +3,7 @@ class Dad < ActiveRecord::Base
   
   validates_presence_of :name
   
-  has_attached_file :photo, 
+  has_attached_file :photo,
                     :storage => :s3, 
                     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
                     :path => ':attachment/:id/:style/:basename.:extension',
