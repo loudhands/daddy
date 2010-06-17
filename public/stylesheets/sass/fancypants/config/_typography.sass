@@ -1,0 +1,133 @@
+//Configure some mixins and variables to make the magic happen:
+
+//Set some basic font families
+=typeSerif
+  :font-family "Georgia", "Times New Roman", serif
+  
+=typeSans
+  :font-family "Verdana", sans-serif
+
+//set a base font size and line height
+!baseFontSize = 14px
+!baseLine = 20px
+
+//create a baseline mixin for use elsewhere
+=baseLine
+  :margin = !baseLine 0
+
+//
+  Create a mixin for header vertical rhythm.  This allows font sizes and baseLine heights to be tweaked
+  without disturbing the even spacing between vertical lines. 
+  
+  Right now, this is working fairly well, but should still be considered in beta. I have noticed some 
+  problems with overlap on multiline headers as font sizes start to climb above 36px.  In this case 
+  you will probably want to give special attention to line height and margins, though here, through 
+  inheritence I have the same line-height for the 36px h1 and a 48px tagline h1 with decent results, 
+  as both are multiples of my base font size. When in doubt, employ something like 960gridder 
+  booklmarklet.
+       
+=header(!fontSize)
+  :font-size = !fontSize
+  @if !fontSize > !baseLine
+    :line-height = (!baseLine/(!fontSize*0.5))
+    :margin = (!baseLine/!fontSize) + "em" 0
+  @else
+    :line-height = (!baseLine/!fontSize)
+    :margin = ((!baseLine/!fontSize) + "em") 0
+    
+//Configure Typography:
+
+//apply base typography
+body
+  +typeSans
+  :font-size = !baseFontSize
+  :line-height = !baseLine
+
+//declare some headers
+h1
+  +typeSerif
+  +header(30px)
+  :color = !h1
+  :font-weight bold
+  :font-style italic
+  
+h2
+  +typeSerif
+  +header(18px)
+  :color = !h2
+  :font-weight bold
+  
+h3
+  +header(16px)
+  :color = !h3
+
+//deal with other elements
+
+a
+  :color = !link
+  &:hover
+    :color = !link + #333
+    :text-decoration underline
+
+p, table, .paginate
+  :color = !text
+
+//apply a baseline to elements
+p, dl, hr, ol, ul, pre, table, address, fieldset, .block
+  +baseLine
+  
+th
+  :font-size = !baseFontSize * 1.5
+  :font-weight bold
+    
+ul
+  :list-style-type circle
+  :margin = !baseLine/2 0 !baseLine/2
+  :margin-left 15px
+  li
+    :line-height = !baseLine
+    :margin = !baseLine/2 0
+
+.bold
+  :font-weight bold
+
+.italic
+  :font-style italic
+  
+.underline
+  :text-decoration underline
+
+//Configure some "less global" type settings
+=logoType
+  +typeSerif
+  :color = !logo
+  :font-size 48px
+  
+=topBarType
+  .tagline
+    :color = !lighter - #222
+    :font-size = 12px
+  #nav
+    :font-size = 18px
+    
+=primaryNavType
+  :font-size = 18px
+
+=secondaryNavType
+  :font-size = 12px
+
+=contentTaglineType
+  h1
+    :font-size 48px
+
+=btnNewType
+  :color #333
+  :font-size 16px
+  :font-weight bold
+  &:hover
+    :color #444
+
+.box-top
+  :color = !lightest
+  :font-size 16px
+  :font-weight bold

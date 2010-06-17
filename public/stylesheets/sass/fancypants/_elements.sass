@@ -1,0 +1,84 @@
+=formLabel
+  :font-size 1em
+  :font-weight bold
+  
+//form elements
+form
+  fieldset
+    :float left
+    :width 100%
+    label
+      +formLabel
+    input
+      :border = "1px solid" #bbb
+      :height 15px
+      :padding 5px
+      :width 99%
+      :-moz-border-radius 2px
+      :-webkit-border-radius 2px
+      &:focus
+        :background #fff
+    textarea
+      :border = "1px solid" #bbb
+      :min-height 100px
+      :resize none
+      :width 100%
+    .checkbox
+      label
+        :float left
+      input
+        :border 0
+        :float left
+        :width 25px
+    .radio
+      label
+        :float left
+      input
+        :border 0
+        :float left
+        :width 25px
+    .file
+      :margin 10px 0
+      input
+        :border 0
+        :*border 1px solid #ccc
+        :height 25px
+    .submit
+      :width 100%
+      :display inline-block
+
+//tables
+!alternating_table_color = !lighter
+!table_border = "1px solid" !border
+!cell_padding = 5px
+
+table
+  :border-bottom = !table_border
+  :border-left = !table_border
+  caption
+    :margin-bottom 10px
+  th
+    :background = !darkest
+    :color = !lightest
+    :padding = !cell_padding
+  td
+    :border-top = !table_border
+    :border-right = !table_border
+    :padding = !cell_padding
+  //
+    this class alternates gray and white rows, :nth-child only works in css3, so if
+    you want alternating to be backwards compatable, you'll need to roll another solution.
+  &.alternating
+    tr:nth-child(even)
+      :background = !alternating_table_color
+      
+  //this class specifies a content administration table, rather than a data table
+  &.content
+    :border none
+    :width 100%
+    th
+      :background none
+      :border-bottom = "1px solid" !border
+      :color = !text
+    td
+      :border 0

@@ -1,0 +1,15 @@
+!!!
+%html{:lang => "en", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
+    %title Who is your daddy and what does he do?
+    = stylesheet_link_tag 'application'
+  %body
+    #wrapper
+      #top-bar
+        #top-bar-inner
+          %a{:href=>"/"}
+            #logo
+      #content
+        = yield
+      #footer

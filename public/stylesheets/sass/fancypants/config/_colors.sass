@@ -1,0 +1,64 @@
+//Base color
+!base = #888
+
+//Color scheme
+!darkest = !base - #888
+!darker = !base - #555
+!dark = !base - #222
+!medium = #034569
+!light = #D2D3D6
+!lighter = !base + #666
+!lightest = !base + #888
+
+
+// Apply color scheme to elements
+
+//Body elements
+!body = #f4fcff
+!topBar = #006f8e
+!logo = #4C4D56
+!tabs = !medium
+!tabLink = !lightest
+!wrapper = #f4fcff
+!contentBox = #fff
+
+//Typography
+!h1 = #00475f
+!h2 = #a4c0ca
+!h3 = !darker
+!h4 = !darkest
+!text = !darkest
+
+!link = #00475f
+
+//Border used on content box, pagination, etc.
+!border = #D2D3D6
+=borderThin
+  :border = "1px solid" !border
+
+
+// Error and Flash Messages
+
+//Error messages
+!error = #F5D1C4
+!red = #ee1111
+!errorText = #FF0000
+
+//Alert messages
+!alert = #fbf7b1
+
+//Success messages
+!success = #98F395
+
+//Flash message color scheme
+=flash(!flashColor, !flashImage)
+  :background = !flashColor
+  :border-color = !flashColor - #666
+  #close
+    :background = !flashColor - #666
+    :border-color = !flashColor - #999
+    :color = !flashColor - #999
+    &:hover
+      :background = !flashColor
+  .message
+    :background = "url('/images/icons/" + !flashImage + ".png') no-repeat center left"
