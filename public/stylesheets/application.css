@@ -614,6 +614,7 @@ body {
       padding: 10px;
       width: 130px; }
     .dads .dad .info {
-      float: left; }
+      float: left;
+      display: none; }
       .dads .dad .info h1 {
         margin-top: 0; }
