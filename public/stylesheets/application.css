@@ -603,16 +603,19 @@ body {
 .dads {
   padding-top: 60px; }
   .dads .dad {
-    border-bottom: 1px solid #a5d8e9;
+    float: left;
     padding: 20px 0; }
     .dads .dad .photo {
       background: #fff;
       border: 1px solid #a5d8e9;
       float: left;
-      height: 130px;
+      height: 150px;
       margin-right: 20px;
       padding: 10px;
-      width: 130px; }
+      width: 150px; }
+      .dads .dad .photo img {
+        height: 140px;
+        width: 140px; }
     .dads .dad .info {
       float: left;
       display: none; }
