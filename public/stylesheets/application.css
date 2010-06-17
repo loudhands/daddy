@@ -584,7 +584,8 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a3f19b', endColorstr='#42ad3b');
   border: 1px solid #40CF3B;
   color: #0C6C0C;
-  font-style: italic;
+  font-family: "Verdana";
+  font-size: 24px;
   font-weight: bold;
   padding: 10px 15px;
   text-decoration: none; }
@@ -614,8 +615,8 @@ body {
       padding: 10px;
       width: 150px; }
       .dads .dad .photo img {
-        height: 140px;
-        width: 140px; }
+        height: 150px;
+        width: 150px; }
     .dads .dad .info {
       float: left;
       display: none; }
