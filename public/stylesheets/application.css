@@ -279,10 +279,10 @@ table {
     padding-left: 20px; }
 
 body {
-  background: #f4fcff; }
+  background: white; }
 
 #wrapper {
-  background: #f4fcff;
+  background: white;
   width: 100%; }
   #wrapper #top-bar {
     background: url('../images/top-bar-bg.png');
@@ -355,8 +355,8 @@ body {
       cursor: pointer;
       padding: 2px 20px 13px; }
       #tabs #primary-nav ul li.active {
-        background: #f4fcff;
-        border-bottom: 1px solid #f4fcff; }
+        background: white;
+        border-bottom: 1px solid white; }
         #tabs #primary-nav ul li.active a {
           color: #034569; }
   #tabs #secondary-nav {
@@ -563,8 +563,7 @@ body {
   width: 960px; }
 
 .header-group {
-  *display: inline-block;
-  border-bottom: 1px solid #a4c0ca; }
+  *display: inline-block; }
   .header-group:after {
     content: " ";
     display: block;
@@ -604,21 +603,36 @@ body {
 .dads {
   padding-top: 60px; }
   .dads .dad {
-    float: left;
-    padding: 20px 0; }
+    float: left; }
     .dads .dad .photo {
       background: #fff;
-      border: 1px solid #a5d8e9;
+      border: 1px solid #eee;
       float: left;
-      height: 150px;
-      margin-right: 20px;
-      padding: 10px;
-      width: 150px; }
+      height: 200px;
+      margin: 10px;
+      width: 200px; }
       .dads .dad .photo img {
-        height: 150px;
-        width: 150px; }
+        height: 200px;
+        width: 200px; }
+    .dads .dad a {
+      text-decoration: none; }
     .dads .dad .info {
-      float: left;
-      display: none; }
-      .dads .dad .info h1 {
-        margin-top: 0; }
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+      height: 181px;
+      margin: 10px;
+      padding: 10px;
+      position: absolute;
+      width: 181px;
+      z-index: 99; }
+      .dads .dad .info h2 {
+        font-family: "Verdana", sans-serif;
+        color: #fff;
+        margin-top: 0;
+        font-weight: normal; }
+      .dads .dad .info p {
+        font-family: "Georgia", "Times New Roman", serif;
+        font-size: 16px;
+        font-style: italic;
+        color: #ccc; }

@@ -1,8 +1,4 @@
 .dads
-  .header-group
-    %h2
-      The Dad's
-    = link_to "+ Add my Dad", new_dad_path, :class=>"btn add"
   - if @dads.blank?
     %h2
       No Dads added yet : [
@@ -12,18 +8,16 @@
         .photo
           - if !dad.photo || dad.photo.size.blank?
             =# TODO: add a missing.png file
-            = link_to image_tag("rails.png"), dad_path(dad)
+            = link_to image_tag("rails.png")
           - else
-            = link_to image_tag(dad.photo.url), dad_path(dad)
-        .info
-          %h1
-            = link_to dad.name, dad_path(dad)
-          %p
-            = dad.description
-          .share
+            = link_to image_tag(dad.photo.url)
+        %a{:href=>"#{dad_path(dad)}"}
+          .info
+            %h2
+              = dad.name
             %p
-              = twitter_share(dad_url(dad))
-              = facebook_share(dad_url(dad))
-        .clearfix
-
-= will_paginate @dads
+              = dad.description
+  .clearfix
+.paginate
+  = will_paginate @dads
+  

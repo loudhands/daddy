@@ -30,7 +30,6 @@
   
 .header-group
   +clearfix
-  :border-bottom = "1px solid" !h2
   h2
     :float left
   a
@@ -65,20 +64,35 @@
   :padding-top 60px
   .dad
     :float left
-    :padding 20px 0
     .photo
       :background #fff
-      :border 1px solid #a5d8e9
+      :border 1px solid #eee
       :float left
-      :height 150px
-      :margin-right 20px
-      :padding 10px
-      :width 150px
+      :height 200px
+      :margin 10px
+      :width 200px
       img
-        :height 150px
-        :width 150px
+        :height 200px
+        :width 200px
+    a
+      :text-decoration none
     .info
-      :float left
-      :display none
-      h1
+      :background #000
+      :color #fff
+      :cursor pointer
+      :height 181px
+      :margin 10px
+      :padding 10px
+      :position absolute
+      :width 181px
+      :z-index 99
+      h2
+        +typeSans
+        :color #fff
         :margin-top 0
+        :font-weight normal
+      p
+        +typeSerif
+        :font-size 16px
+        :font-style italic
+        :color #ccc
