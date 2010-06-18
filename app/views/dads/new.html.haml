@@ -10,5 +10,7 @@
       %span.file
         = f.label :photo, "Add a photo?"
         = f.file_field :photo
+        
+        = less_reverse_captcha_field :dad
     %p
       = f.submit 'Add Dad', :class=>"btn submit"

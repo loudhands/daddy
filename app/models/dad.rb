@@ -3,6 +3,8 @@ class Dad < ActiveRecord::Base
   
   validates_presence_of :name
   
+  validates_less_reverse_captcha
+  
   has_attached_file :photo, :styles => {:thumb => "200x200#", :large => "400x400>"},
                     :storage => :s3, 
                     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
