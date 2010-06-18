@@ -7,7 +7,6 @@
   - else
     = image_tag(@dad.photo.url(:larg))
   
-
 %p
   = @dad.description 
   
@@ -15,12 +14,11 @@
 %p
   = twitter_share(dad_url(@dad))
   
-
 %p
   = facebook_share(dad_url(@dad))
   
 %p
-  %a{:href=>"mailto:?subject=Dads!%20&body=Check%20out%20my%20dad:%20#{dad_url(@dad)}"}Email This
+  = email_share(dad_url(@dad))
   
 
 = link_to "Back", root_path 
