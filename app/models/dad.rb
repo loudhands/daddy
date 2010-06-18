@@ -22,12 +22,21 @@ class Dad < ActiveRecord::Base
   end
   
   def to_twitter(link)
-    "My+Dad+is+#{self.name}+and+he+#{truncate(self.twitter_description, :length => 50)}+#{Dad.make_bitly_from(link)}"
+    "My+Dad+is+#{self.twitter_name}+and+he+#{truncate(self.twitter_description, :length => 50)}+#{Dad.make_bitly_from(link)}"
+  end
+  
+  def twitter_name
+    name = ""
+    self.name.split(" ").each do |word|
+      name += word
+      name += "+"
+    end
+    name.chomp
   end
   
   def twitter_description
-    desc = ""
     if self.description.size > 50
+      desc = ""
       self.description.split(" ").each do |word|
         desc += word
         desc += "+"
