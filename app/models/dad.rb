@@ -1,7 +1,12 @@
 class Dad < ActiveRecord::Base
   require 'bitly'
+  include ActionView::Helpers::TextHelper
   
   validates_presence_of :name
+  
+  validates_length_of :description, :maximum => 140
+  
+  validates_length_of :name, :maximum => 50
   
   validates_less_reverse_captcha
   
@@ -14,5 +19,31 @@ class Dad < ActiveRecord::Base
   def self.make_bitly_from(link)
     bitly = Bitly.new("mcmaloney", "R_e671a79e4b4482795dc870aeb4194df6")
     bitly.shorten(link).short_url
+  end
+  
+  def to_twitter(link)
+    "My+Dad+is+#{self.twitter_name}+and+he+#{truncate(self.twitter_description, :length => 50)}+#{Dad.make_bitly_from(link)}"
+  end
+  
+  def twitter_name
+    name = ""
+    self.name.split(" ").each do |word|
+      name += word
+      name += "+"
+    end
+    name.chomp
+  end
+  
+  def twitter_description
+    if self.description.size > 50
+      desc = ""
+      self.description.split(" ").each do |word|
+        desc += word
+        desc += "+"
+      end
+      desc.chop
+    else
+      self.description
+    end
   end
 end
