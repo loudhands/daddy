@@ -550,7 +550,7 @@ body {
       font-style: italic;
       font-size: 30px;
       height: 300px;
-      margin-left: 65px;
+      margin-left: 60px;
       width: 100%; }
       #wrapper #top-bar #top-bar-inner #logo p {
         color: #fff; }
@@ -573,7 +573,7 @@ body {
     #content #main #bubble {
       background: url("../images/bubble.png");
       height: 172px;
-      margin-left: 145px;
+      margin-left: 130px;
       margin-top: -130px;
       position: absolute;
       width: 940px;
