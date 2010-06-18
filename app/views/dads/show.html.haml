@@ -5,7 +5,7 @@
   - if !@dad.photo || @dad.photo.size.blank?
     = image_tag("rails.png")
   - else
-    = image_tag(@dad.photo.url(:larg))
+    = image_tag(@dad.photo.url(:large))
   
 %p
   = @dad.description 
