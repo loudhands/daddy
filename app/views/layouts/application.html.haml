@@ -11,11 +11,14 @@
     = javascript_include_tag 'application'
   %body
     #wrapper
-      #top-bar
-        #top-bar-inner
-          %a{:href=>"/"}
-            #logo
       #content
-        = yield
+        #sidebar
+          #top-bar
+            #top-bar-inner
+              %a{:href=>"/"}
+                #logo
+        #main
+          #bubble
+          = yield
       #footer
         = link_to "+ Add my Dad", new_dad_path

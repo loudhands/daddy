@@ -10,7 +10,7 @@ body
   :background = !wrapper
   :width 100%
   #top-bar
-    :background url('../images/top-bar-bg.png')
+    //:background url('../images/top-bar-bg.png')
     //:border-bottom 1px solid #999
     :height 105px
     &.tabs
@@ -18,11 +18,9 @@ body
     #top-bar-inner
       +topBarType
       :border-bottom 1px solid #ddd
-      :padding 20px 0 5px
-      :margin 0 auto
+      :padding 20px 60px 5px
       //IE6 hack (top padding not being respected)
       :*margin-top 20px
-      :width 960px
       +clearfix
       a
         :cursor pointer
@@ -81,8 +79,7 @@ body
         
   #content
     +clearfix
-    :margin 0 auto
-    :width 960px
+    :margin 0 60px
     .tagline
       +baseLine
       +contentTaglineType
@@ -91,7 +88,7 @@ body
       :padding 9px 0
       :text-align center
     #sidebar
-      :display inline-block
+      :float left
       :width 300px
       :margin 0 10px
     #main
