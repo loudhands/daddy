@@ -50,7 +50,7 @@
   #main
     :width 600px
     fieldset
-      :margin-left 185px
+      :margin-left 160px
   
 #wrapper #footer
   :background #111
@@ -71,8 +71,10 @@
       :margin-top 0
       :padding 20px
       :text-decoration none
+      :-moz-border-radius 3px
+      :-webkit-border-radius 3px
       &:hover
-        :text-decoration underline
+        :background #333
     .video
       :float left
     .explain
@@ -88,7 +90,7 @@
         :color #666
   
 .dads
-  :padding-top 100px
+  :padding-top 120px
   .dad
     :float left
     .photo
@@ -98,8 +100,8 @@
       :height 200px
       :margin 10px
       :width 200px
-      //:box-shadow -10px 10px 3px #888
-      :-moz-box-shadow -1px 3px 3px #999
+      :box-shadow -3px 2px 3px #888
+      :-moz-box-shadow -3px 2px 3px #888
       :-webkit-box-shadow -3px 2px 3px #888
     a
       :text-decoration none
@@ -130,7 +132,11 @@
   :margin-left 170px
   :width 200px
   img
+    :border 5px solid #fff
     :width 200px
+    :box-shadow -1px 2px 3px #888
+    :-moz-box-shadow -1px 2px 3px #888
+    :-webkit-box-shadow -1px 2px 3px #888
 .dad-info
   :float left
   :margin 20px

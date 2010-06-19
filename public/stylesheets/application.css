@@ -593,7 +593,7 @@ body {
   #content #main {
     width: 600px; }
     #content #main fieldset {
-      margin-left: 185px; }
+      margin-left: 160px; }
 
 #wrapper #footer {
   background: #111;
@@ -615,9 +615,11 @@ body {
       font-style: italic;
       margin-top: 0;
       padding: 20px;
-      text-decoration: none; }
+      text-decoration: none;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px; }
       #wrapper #footer #footer-inner a.add-dad:hover {
-        text-decoration: underline; }
+        background: #333; }
     #wrapper #footer #footer-inner .video {
       float: left; }
     #wrapper #footer #footer-inner .explain {
@@ -633,7 +635,7 @@ body {
         color: #666; }
 
 .dads {
-  padding-top: 100px; }
+  padding-top: 120px; }
   .dads .dad {
     float: left; }
     .dads .dad .photo {
@@ -643,7 +645,8 @@ body {
       height: 200px;
       margin: 10px;
       width: 200px;
-      -moz-box-shadow: -1px 3px 3px #999;
+      box-shadow: -3px 2px 3px #888;
+      -moz-box-shadow: -3px 2px 3px #888;
       -webkit-box-shadow: -3px 2px 3px #888; }
     .dads .dad a {
       text-decoration: none; }
@@ -674,7 +677,11 @@ body {
   margin-left: 170px;
   width: 200px; }
   .dad-image img {
-    width: 200px; }
+    border: 5px solid #fff;
+    width: 200px;
+    box-shadow: -1px 2px 3px #888;
+    -moz-box-shadow: -1px 2px 3px #888;
+    -webkit-box-shadow: -1px 2px 3px #888; }
 
 .dad-info {
   float: left;
