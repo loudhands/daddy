@@ -71,9 +71,9 @@ h3 {
   color: #333333; }
 
 a {
-  color: #00475f; }
+  color: #333333; }
   a:hover {
-    color: #337a92;
+    color: #666666;
     text-decoration: underline; }
 
 p, table, .paginate {
@@ -526,24 +526,24 @@ body {
     width: 210px; }
 
 .paginate {
-  float: right; }
+  margin-top: 60px; }
   .paginate a {
     border: 1px solid #d2d3d6;
     margin: 0 5px;
-    padding: 1px 1px 1px 5px;
+    padding: 1px 5px;
     text-decoration: none; }
     .paginate a:hover {
-      background: #00475f;
-      border-color: #00475f;
+      background: #333333;
+      border-color: #333333;
       color: #fff; }
   .paginate .next_page {
     background: none;
     border: 0; }
   .paginate .current {
     color: white;
-    background: #00475f;
+    background: #333333;
     margin: 0 5px;
-    padding: 1px 1px 1px 5px; }
+    padding: 1px 5px; }
   .paginate .disabled {
     border: none;
     color: #888; }
