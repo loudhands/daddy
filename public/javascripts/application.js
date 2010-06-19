@@ -7,4 +7,18 @@ $(document).ready(function() {
   }, function() {
    $(this).children(".info").stop().animate({ opacity: 0});
   });
+  
+  var options = {  
+    'maxCharacterSize': 140,  
+    'textFontSize': '12px',  
+    'textColor': '#111',  
+    'textFamily': 'Verdana, sans-serif',  
+    'textAlign': 'right',  
+    'warningColor': '#CC3300',    
+    'warningNumber': 10,  
+    'isCharacterCount': true,  
+    'isWordCount': false  
+  };  
+  $('#textCount').textareaCount(options);
+  
 });
