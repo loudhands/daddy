@@ -14,9 +14,9 @@
         %a{:href=>"#{dad_path(dad)}"}
           .info
             %h2
-              = dad.name
+              =h dad.name
             %p
-              = dad.description
+              =h dad.description
   .clearfix
 .paginate
   = will_paginate @dads
