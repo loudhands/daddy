@@ -1,7 +1,7 @@
 .dad-image
   %p
     - if !@dad.photo || @dad.photo.size.blank?
-      = image_tag("rails.png")
+      = image_tag("default.jpg")
     - else
       = image_tag(@dad.photo.url(:large))
 
