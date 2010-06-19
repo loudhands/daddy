@@ -5,13 +5,16 @@
 @import fancypants/_messages.sass
 @import fancypants/_default.sass
 
-#wrapper  
+#wrapper
+  :background #F6F6F6
   #top-bar
-    :background -webkit-gradient(linear, left top, left bottom, from(#0090b5), to(#01546f))
-    :background -moz-linear-gradient(top,  #0090b5,  #01546f)
-    :filter progid:DXImageTransform.Microsoft.gradient(startColorstr='#0090b5', endColorstr='#01546f')
+    //:background -webkit-gradient(linear, left top, left bottom, from(#0090b5), to(#01546f))
+    //:background -moz-linear-gradient(top,  #0090b5,  #01546f)
+    //:filter progid:DXImageTransform.Microsoft.gradient(startColorstr='#0090b5', endColorstr='#01546f')
     #top-bar-inner
+      :margin-top 20px
       :border none
+      :padding 83px 0 0 0
       #logo
         +typeSerif
         :background url('../images/aaarnold.png') no-repeat
@@ -19,14 +22,36 @@
         :font-weight bold
         :font-style italic
         :font-size 30px
-        :height 150px
+        :height 300px
+        :margin-left 65px
         :width 100%
         p
           :color #fff
 
 #content
-  :margin 0 auto
-  :width 960px
+  :width 100%
+  #sidebar
+    :background #0187ab
+    :background -webkit-gradient(linear, left top, left bottom, from(#0090b5), to(#01546f))
+    :background -moz-linear-gradient(top,  #0090b5,  #01546f)
+    :filter progid:DXImageTransform.Microsoft.gradient(startColorstr='#0090b5', endColorstr='#01546f')
+    :float left
+    :height 1000px
+    :margin-right 20px
+    :width 190px
+  #main
+    :margin 0 10px 0 20px
+    :padding-top 150px
+    :width 1100px
+    #bubble
+      :background url("../images/bubble.png")
+      :height 172px
+      :margin-left 145px
+      :margin-top -130px
+      :position absolute
+      :width 940px
+      :z-index 98
+      
   
 .header-group
   +clearfix
