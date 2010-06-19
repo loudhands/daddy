@@ -11,16 +11,16 @@
     = javascript_include_tag 'application'
   %body
     #wrapper
+      #top-border
+      #top-bar
+        #top-bar-inner
+          %a{:href=>"/"}
+            #logo
+              Who is your daddy
+              %br/
+              and what does he do?
       #content
-        #sidebar
-          #top-bar
-            #top-bar-inner
-              %a{:href=>"/"}
-                #logo
-          Lovingly made by Mike and Bob in celebration of Dad's everywhere (especially our own).
-          %p
-            = link_to "+ Add my Dad", new_dad_path
-        #main
-          #bubble
-          = yield
+        = yield
       #footer
+        %p
+          = link_to "+ Add my Dad", new_dad_path

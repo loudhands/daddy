@@ -6,7 +6,11 @@
 @import fancypants/_default.sass
 
 #wrapper
-  :background #F6F6F6
+  :background #f6f6f6
+  #top-border
+    :background #aaa
+    :border-bottom 1px solid #ddd
+    :height 10px
   #top-bar
     //:background -webkit-gradient(linear, left top, left bottom, from(#0090b5), to(#01546f))
     //:background -moz-linear-gradient(top,  #0090b5,  #01546f)
@@ -14,51 +18,37 @@
     #top-bar-inner
       :margin-top 20px
       :border none
-      :padding 83px 0 0 0
+      :padding 0
+      :width 1000px
+      a
+        :text-decoration none
       #logo
         +typeSerif
-        :background url('../images/aaarnold.png') no-repeat
-        :color #fff
+        +header(72px)
+        //:background url('../images/aaarnold.png') no-repeat
+        :color #ccc
         :font-weight bold
         :font-style italic
-        :font-size 30px
-        :height 300px
+        :height 220px
+        :line-height 100px
         :margin-left 60px
-        :width 100%
+        :margin-bottom 0
+        :text-align left
+        :text-decoration none
+        :text-shadow 1px 1px #fff, -1px -1px #ccc
+        :width 1060px
         p
           :color #fff
 
 #content
-  :width 100%
-  #sidebar
-    :background #0187ab
-    :background -webkit-gradient(linear, left top, left bottom, from(#0090b5), to(#01546f))
-    :background -moz-linear-gradient(top,  #0090b5,  #01546f)
-    :filter progid:DXImageTransform.Microsoft.gradient(startColorstr='#0090b5', endColorstr='#01546f')
-    :float left
-    :height 1000px
-    :margin-right 20px
-    :width 190px
-  #main
-    :margin 0 10px 0 20px
-    :padding-top 150px
-    :width 1100px
-    #bubble
-      :background url("../images/bubble.png")
-      :height 172px
-      :margin-left 130px
-      :margin-top -130px
-      :position absolute
-      :width 940px
-      :z-index 98
-      
+  :padding 60px
+  :width 1100px
   
-.header-group
-  +clearfix
-  h2
-    :float left
-  a
-    :float right
+#wrapper #footer
+  :background #000
+  :min-height 50px
+  :padding 20px 60px
+  
     
 .add
   +typeSerif
@@ -91,11 +81,14 @@
     :float left
     .photo
       :background #fff
-      :border 1px solid #eee
+
       :float left
       :height 200px
       :margin 10px
       :width 200px
+      //:box-shadow -10px 10px 3px #888
+      :-moz-box-shadow -1px 3px 3px #999
+      :-webkit-box-shadow -3px 2px 3px #888
       img
         :height 200px
         :width 200px
