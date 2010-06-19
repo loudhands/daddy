@@ -31,7 +31,7 @@ class Dad < ActiveRecord::Base
       name += word
       name += "+"
     end
-    name.chomp
+    name.chop
   end
   
   def twitter_description
