@@ -1,6 +1,9 @@
 =formLabel
-  :font-size 1em
+  :color #111
+  :font-size 1.5em
   :font-weight bold
+  :font-style italic
+  :line-height 40px
   
 //form elements
 form
@@ -8,6 +11,7 @@ form
     :float left
     :width 100%
     label
+      +typeSerif
       +formLabel
     input
       :border = "1px solid" #bbb
@@ -20,7 +24,7 @@ form
         :background #fff
     textarea
       :border = "1px solid" #bbb
-      :min-height 100px
+      :min-height 50px
       :resize none
       :width 100%
     .checkbox

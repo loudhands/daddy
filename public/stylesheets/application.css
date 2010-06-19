@@ -110,8 +110,12 @@ form fieldset {
   float: left;
   width: 100%; }
   form fieldset label {
-    font-size: 1em;
-    font-weight: bold; }
+    font-family: "Georgia", "Times New Roman", serif;
+    color: #111;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 40px; }
   form fieldset input {
     border: 1px solid #bbbbbb;
     height: 15px;
@@ -123,7 +127,7 @@ form fieldset {
       background: #fff; }
   form fieldset textarea {
     border: 1px solid #bbbbbb;
-    min-height: 100px;
+    min-height: 50px;
     resize: none;
     width: 100%; }
   form fieldset .checkbox label {
@@ -571,6 +575,8 @@ body {
 #content {
   padding: 60px;
   width: 1100px; }
+  #content #main {
+    width: 600px; }
 
 #wrapper #footer {
   background: #111;

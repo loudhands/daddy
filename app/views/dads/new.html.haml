@@ -1,16 +1,17 @@
-- form_for @dad, :html => {:multipart => true} do |f|
-  %fieldset
-    %p
-      = f.label :name, "Your Dad's name:"
-      = f.text_field :name
-    %p
-      = f.label :description, "What does he do:"
-      = f.text_area :description
-    %p
-      %span.file
-        = f.label :photo, "Add a photo?"
-        = f.file_field :photo
+#main
+  - form_for @dad, :html => {:multipart => true} do |f|
+    %fieldset
+      %p
+        = f.label :name, "My Dad's name is"
+        = f.text_field :name
+      %p
+        = f.label :description, "and he"
+        = f.text_area :description, :rows=>"10"
+      %p
+        %span.file
+          = f.label :photo, "Add a photo"
+          = f.file_field :photo
         
-        = less_reverse_captcha_field :dad
-    %p
-      = f.submit 'Add Dad', :class=>"btn submit"
+          = less_reverse_captcha_field :dad
+      %p
+        = f.submit 'Add Dad', :class=>"btn submit"
