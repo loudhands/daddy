@@ -1,24 +1,25 @@
-%h1
-  = @dad.name
+.dad-image
+  %p
+    - if !@dad.photo || @dad.photo.size.blank?
+      = image_tag("rails.png")
+    - else
+      = image_tag(@dad.photo.url(:large))
 
-%p
-  - if !@dad.photo || @dad.photo.size.blank?
-    = image_tag("rails.png")
-  - else
-    = image_tag(@dad.photo.url(:large))
-  
-%p
-  = @dad.description 
-  
+.dad-info
+  %h1
+    = @dad.name
 
-%p
-  = twitter_share(@dad, dad_url(@dad))
-  
-%p
-  = facebook_share(dad_url(@dad))
-  
-%p
-  = email_share(dad_url(@dad))
+
+  %p
+    = @dad.description 
+
+
+  %p
+    = twitter_share(@dad, dad_url(@dad))
+    &nbsp;
+    = facebook_share(dad_url(@dad))
+    &nbsp;
+    = email_share(dad_url(@dad))
   
 
 = link_to "Back", root_path 

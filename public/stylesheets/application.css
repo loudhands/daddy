@@ -47,12 +47,11 @@ body {
 
 h1 {
   font-family: "Georgia", "Times New Roman", serif;
-  font-size: 30px;
-  line-height: 1.333;
-  margin: 0.667em 0;
-  color: #fff;
-  font-weight: bold;
-  font-style: italic; }
+  font-size: 48px;
+  line-height: 0.833;
+  margin: 0.417em 0;
+  color: #111;
+  font-weight: bold; }
   h1.top {
     margin-top: 0; }
 
@@ -668,3 +667,48 @@ body {
         font-size: 16px;
         font-style: italic;
         color: #ccc; }
+
+.dad-image {
+  float: left;
+  margin: 20px;
+  margin-left: 170px;
+  width: 200px; }
+  .dad-image img {
+    width: 200px; }
+
+.dad-info {
+  float: left;
+  margin: 20px;
+  width: 400px; }
+  .dad-info p {
+    margin-bottom: 40px; }
+  .dad-info a {
+    text-decoration: none;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px; }
+  .dad-info h1 {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    color: #333;
+    padding: 10px 0; }
+  .dad-info .fb {
+    background: #3b5998;
+    border: 1px solid #324C82;
+    color: #fff;
+    padding: 3px; }
+    .dad-info .fb:hover {
+      background: #4366AE; }
+  .dad-info .tw {
+    background: #69B9BE;
+    border: 1px solid #589B9F;
+    color: #fff;
+    padding: 3px; }
+    .dad-info .tw:hover {
+      background: #73CBD0; }
+  .dad-info .em {
+    background: #8E65E2;
+    border: 1px solid #855FD4;
+    color: #fff;
+    padding: 3px; }
+    .dad-info .em:hover {
+      background: #966BF0; }
