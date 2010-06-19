@@ -588,6 +588,7 @@ body {
 #wrapper #footer {
   background: #111;
   border-top: 5px solid #333;
+  margin-top: 20px;
   min-height: 50px;
   padding: 20px 60px; }
   #wrapper #footer a.add-dad {
