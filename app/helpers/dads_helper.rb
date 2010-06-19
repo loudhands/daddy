@@ -1,6 +1,6 @@
 module DadsHelper
   def facebook_share(link)
-    %{<a href="http://www.facebook.com/sharer.php?u=#{link}&t='Who is your daddy and what does he do?'" class="fb">Facebook</a>}
+    %{<a href="http://www.facebook.com/sharer.php?u=#{link}&t='Who is your daddy and what does he do - #{@dad.name}'" class="fb">Facebook</a>}
   end
   
   def twitter_share(dad, link)
