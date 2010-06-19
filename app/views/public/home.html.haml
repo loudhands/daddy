@@ -10,7 +10,7 @@
             =# TODO: add a missing.png file
             = link_to image_tag("rails.png")
           - else
-            = link_to image_tag(dad.photo.url)
+            = link_to image_tag(dad.photo.url(:thumb))
         %a{:href=>"#{dad_path(dad)}"}
           .info
             %h2

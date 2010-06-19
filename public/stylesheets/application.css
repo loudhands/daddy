@@ -50,7 +50,7 @@ h1 {
   font-size: 30px;
   line-height: 1.333;
   margin: 0.667em 0;
-  color: #00475f;
+  color: #fff;
   font-weight: bold;
   font-style: italic; }
 
@@ -573,9 +573,37 @@ body {
   width: 1100px; }
 
 #wrapper #footer {
-  background: #000;
+  background: #111;
+  border-top: 5px solid #333;
   min-height: 50px;
   padding: 20px 60px; }
+  #wrapper #footer a.add-dad {
+    font-size: 48px;
+    line-height: 0.833;
+    margin: 0.417em 0;
+    font-family: "Georgia", "Times New Roman", serif;
+    background: #222;
+    border: 1px solid #444;
+    color: #fff;
+    float: right;
+    font-style: italic;
+    padding: 20px;
+    text-decoration: none; }
+    #wrapper #footer a.add-dad:hover {
+      text-decoration: underline; }
+  #wrapper #footer .video {
+    float: left; }
+  #wrapper #footer .explain {
+    border-left: 1px solid #222;
+    float: left;
+    margin-left: 10px;
+    padding-left: 20px;
+    width: 300px; }
+    #wrapper #footer .explain h1 {
+      color: #999;
+      font-size: 32px; }
+    #wrapper #footer .explain p {
+      color: #666; }
 
 .add {
   font-family: "Georgia", "Times New Roman", serif;
@@ -614,9 +642,6 @@ body {
       width: 200px;
       -moz-box-shadow: -1px 3px 3px #999;
       -webkit-box-shadow: -3px 2px 3px #888; }
-      .dads .dad .photo img {
-        height: 200px;
-        width: 200px; }
     .dads .dad a {
       text-decoration: none; }
     .dads .dad .info {

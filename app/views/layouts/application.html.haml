@@ -22,5 +22,15 @@
       #content
         = yield
       #footer
-        %p
-          = link_to "+ Add my Dad", new_dad_path
+        .video
+          :plain
+            <object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/0ukEqRq8OyU&hl=en_US&fs=1&color1=0x3a3a3a&color2=0x999999"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/0ukEqRq8OyU&hl=en_US&fs=1&color1=0x3a3a3a&color2=0x999999" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
+        .explain
+          %h1
+            Love your Dad?
+          %p
+            Share him! We salute all the hard working fathers out there, thanks for doing like you do.
+          %p
+            Made lovingly by Mike and Bob for Dad's everywhere (especially our own).
+        = link_to "+ Add my Dad", new_dad_path, :class=>"add-dad"
+        .clearfix
