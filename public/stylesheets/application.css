@@ -53,6 +53,8 @@ h1 {
   color: #fff;
   font-weight: bold;
   font-style: italic; }
+  h1.top {
+    margin-top: 0; }
 
 h2 {
   font-family: "Georgia", "Times New Roman", serif;
@@ -587,62 +589,40 @@ body {
 
 #wrapper #footer {
   background: #111;
-  border-top: 5px solid #333;
+  border-top: 2px solid #333;
   margin-top: 20px;
-  min-height: 50px;
-  padding: 20px 60px; }
-  #wrapper #footer a.add-dad {
-    font-size: 48px;
-    line-height: 0.833;
-    margin: 0.417em 0;
-    font-family: "Georgia", "Times New Roman", serif;
-    background: #222;
-    border: 1px solid #444;
-    color: #fff;
-    float: right;
-    font-style: italic;
-    padding: 20px;
-    text-decoration: none; }
-    #wrapper #footer a.add-dad:hover {
-      text-decoration: underline; }
-  #wrapper #footer .video {
-    float: left; }
-  #wrapper #footer .explain {
-    border-left: 1px solid #222;
-    float: left;
-    margin-left: 10px;
-    padding-left: 20px;
-    width: 300px; }
-    #wrapper #footer .explain h1 {
-      color: #999;
-      font-size: 32px; }
-    #wrapper #footer .explain p {
-      color: #666; }
-
-.add {
-  font-family: "Georgia", "Times New Roman", serif;
-  background: url(../images/add-btn-bg.png);
-  background: -webkit-gradient(linear, left top, left bottom, from(#a3f19b), to(#42ad3b));
-  background: -moz-linear-gradient(top,  #a3f19b,  #42ad3b);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a3f19b', endColorstr='#42ad3b');
-  border: 1px solid #40CF3B;
-  color: #0C6C0C;
-  font-family: "Verdana";
-  font-size: 24px;
-  font-weight: bold;
-  padding: 10px 15px;
-  text-decoration: none; }
-  .add:hover {
-    background: -webkit-gradient(linear, left top, left bottom, from(#ABFCA3), to(#42ad3b));
-    background: -moz-linear-gradient(top,  #ABFCA3,  #42ad3b);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ABFCA3', endColorstr='#42ad3b');
-    border: 1px solid #45DD3F;
-    color: #0E870E;
-    text-decoration: none; }
-  .add:active {
-    background: -webkit-gradient(linear, left top, left bottom, from(#42ad3b), to(#ABFCA3));
-    background: -moz-linear-gradient(top,  #42ad3b,  #ABFCA3);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#42ad3b', endColorstr='#ABFCA3'); }
+  min-height: 320px;
+  padding: 30px 60px; }
+  #wrapper #footer #footer-inner {
+    width: 1200px; }
+    #wrapper #footer #footer-inner a.add-dad {
+      font-size: 48px;
+      line-height: 0.833;
+      margin: 0.417em 0;
+      font-family: "Georgia", "Times New Roman", serif;
+      background: #222;
+      border: 1px solid #444;
+      color: #fff;
+      float: left;
+      font-style: italic;
+      margin-top: 0;
+      padding: 20px;
+      text-decoration: none; }
+      #wrapper #footer #footer-inner a.add-dad:hover {
+        text-decoration: underline; }
+    #wrapper #footer #footer-inner .video {
+      float: left; }
+    #wrapper #footer #footer-inner .explain {
+      border-left: 1px solid #222;
+      float: left;
+      margin: 0 20px 0 10px;
+      padding: 0 40px;
+      width: 410px; }
+      #wrapper #footer #footer-inner .explain h1 {
+        color: #999;
+        font-size: 32px; }
+      #wrapper #footer #footer-inner .explain p {
+        color: #666; }
 
 .dads {
   padding-top: 60px; }
@@ -650,6 +630,7 @@ body {
     float: left; }
     .dads .dad .photo {
       background: #fff;
+      border: 1px solid #ddd;
       float: left;
       height: 200px;
       margin: 10px;

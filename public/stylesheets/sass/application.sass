@@ -51,36 +51,38 @@
   
 #wrapper #footer
   :background #111
-  :border-top 5px solid #333
+  :border-top 2px solid #333
   :margin-top 20px
-  :min-height 50px
-  :padding 20px 60px
-  a.add-dad
-    +header(48px)
-    +typeSerif
-    :background #222
-    :border 1px solid #444
-    :color #fff
-    :float right
-    :font-style italic
-    :padding 20px
-    :text-decoration none
-    &:hover
-      :text-decoration underline
-
-  .video
-    :float left
-  .explain
-    :border-left 1px solid #222
-    :float left
-    :margin-left 10px
-    :padding-left 20px
-    :width 300px
-    h1
-      :color #999
-      :font-size 32px
-    p
-      :color #666
+  :min-height 320px
+  :padding 30px 60px
+  #footer-inner
+    :width 1200px
+    a.add-dad
+      +header(48px)
+      +typeSerif
+      :background #222
+      :border 1px solid #444
+      :color #fff
+      :float left
+      :font-style italic
+      :margin-top 0
+      :padding 20px
+      :text-decoration none
+      &:hover
+        :text-decoration underline
+    .video
+      :float left
+    .explain
+      :border-left 1px solid #222
+      :float left
+      :margin 0 20px 0 10px
+      :padding 0 40px
+      :width 410px
+      h1
+        :color #999
+        :font-size 32px
+      p
+        :color #666
   
 .dads
   :padding-top 60px
@@ -88,7 +90,7 @@
     :float left
     .photo
       :background #fff
-
+      :border 1px solid #ddd
       :float left
       :height 200px
       :margin 10px
