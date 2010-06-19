@@ -593,7 +593,7 @@ body {
   #content #main {
     width: 600px; }
     #content #main fieldset {
-      margin-left: 160px; }
+      margin-left: 165px; }
 
 #wrapper #footer {
   background: #111;
@@ -685,7 +685,7 @@ body {
 
 .dad-info {
   float: left;
-  margin: 20px;
+  margin: 40px 20px 20px;
   width: 400px; }
   .dad-info p {
     margin-bottom: 40px; }
