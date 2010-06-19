@@ -550,25 +550,32 @@ body {
     margin-top: 20px;
     border: none;
     padding: 0;
-    width: 1000px; }
+    width: 1140px; }
     #wrapper #top-bar #top-bar-inner a {
       text-decoration: none; }
+    #wrapper #top-bar #top-bar-inner #aaarnold {
+      background: url("../images/aaarnold.png");
+      height: 160px;
+      float: left;
+      margin: 11px 0 0 60px;
+      width: 120px; }
     #wrapper #top-bar #top-bar-inner #logo {
       font-family: "Georgia", "Times New Roman", serif;
-      font-size: 72px;
-      line-height: 0.556;
-      margin: 0.278em 0;
+      font-size: 68px;
+      line-height: 0.588;
+      margin: 0.294em 0;
       color: #ccc;
+      float: left;
       font-weight: bold;
       font-style: italic;
       height: 220px;
-      line-height: 100px;
-      margin-left: 60px;
+      line-height: 80px;
+      margin-left: 40px;
       margin-bottom: 0;
       text-align: left;
       text-decoration: none;
       text-shadow: 1px 1px #fff, -1px -1px #ccc;
-      width: 1060px; }
+      width: 890px; }
       #wrapper #top-bar #top-bar-inner #logo p {
         color: #fff; }
 
