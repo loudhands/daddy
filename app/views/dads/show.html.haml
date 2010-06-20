@@ -17,6 +17,8 @@
   %p
     = twitter_share(@dad, dad_url(@dad))
     &nbsp;
+    %meta{:name=>"description", :content=>"#{@dad.description}"}
+    %link{:rel=>"image_src", :href=>"#{@dad.photo.url(:thumb)}"}
     = facebook_share(dad_url(@dad))
     &nbsp;
     = email_share(dad_url(@dad))
