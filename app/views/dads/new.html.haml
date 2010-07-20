@@ -2,11 +2,11 @@
   - form_for @dad, :html => {:multipart => true} do |f|
     %fieldset
       %p
-        = f.label :name, "My Dad's name is"
+        = f.label :name, "My Daddy's name is"
         = f.text_field :name
       %p
         = f.label :description, "and he"
-        = f.text_area :description, :rows=>"3", :id=>"textCount"
+        = f.text_area :description, :rows=>"4", :id=>"textCount"
       %p
         %span.file
           = f.label :photo, "Add a photo"
@@ -16,3 +16,4 @@
       %p
         %br/
         = f.submit 'Submit', :class=>"btn submit"
+%audio{:src=>"../whois.mp3", :autoplay=>"true", :height=>"0", :width=>"0"}

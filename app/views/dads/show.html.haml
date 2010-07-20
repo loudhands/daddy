@@ -1,7 +1,7 @@
 .dad-image
   %p
     - if !@dad.photo || @dad.photo.size.blank?
-      = image_tag("rails.png")
+      = image_tag("default.jpg")
     - else
       = image_tag(@dad.photo.url(:large))
 
@@ -17,6 +17,8 @@
   %p
     = twitter_share(@dad, dad_url(@dad))
     &nbsp;
+    %meta{:name=>"description", :content=>"#{@dad.description}"}
+    %link{:rel=>"image_src", :href=>"#{@dad.photo.url(:thumb)}"}
     = facebook_share(dad_url(@dad))
     &nbsp;
     = email_share(dad_url(@dad))

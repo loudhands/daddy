@@ -7,8 +7,7 @@
       .dad
         .photo
           - if !dad.photo || dad.photo.size.blank?
-            =# TODO: add a missing.png file
-            = link_to image_tag("rails.png")
+            = link_to image_tag("default.jpg")
           - else
             = link_to image_tag(dad.photo.url(:thumb))
         %a{:href=>"#{dad_path(dad)}"}
